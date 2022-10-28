@@ -1,0 +1,21 @@
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navigation span {
+    cursor: pointer;
+}
+
+.container {
+    margin-top: 60px;
+    text-align: center;
+}
