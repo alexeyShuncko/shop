@@ -1,21 +1,17 @@
-
-
-
-
 .catalog {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
 }
 
 
 .card {
-padding: 15px 10px;
-border: 1px solid black;
-border-radius: 10px;
+    padding: 15px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
-.price{
+.price {
     font-weight: bold;
 }
 
@@ -47,8 +43,9 @@ border-radius: 10px;
 }
 
 .btn:active {
-    box-shadow: 0 0 15px #2ECC71, 0 0 35px #2ECC71,0 0 75px #2ECC71;
+    box-shadow: 0 0 15px #2ECC71, 0 0 35px #2ECC71, 0 0 75px #2ECC71;
 }
+
 .btn:nth-child(2):active {
-    box-shadow: 0 0 15px #dd57a5, 0 0 35px #dd57a5,0 0 75px #dd57a5;
+    box-shadow: 0 0 15px #dd57a5, 0 0 35px #dd57a5, 0 0 75px #dd57a5;
 }

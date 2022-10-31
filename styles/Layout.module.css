@@ -10,6 +10,7 @@
     align-items: center;
     padding: 30px;
     box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 .navigation a.active {

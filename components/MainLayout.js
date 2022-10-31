@@ -21,7 +21,7 @@ export const MainLayout = ({ children }) => {
                 <Link href={'/basket'} className={s.basket} data-count={count} >Корзина</Link>
             </nav>
             <main className={s.container}>
-                {children}
+               {children}
             </main>
         </>
     )
