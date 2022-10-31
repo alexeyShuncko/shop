@@ -8,15 +8,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2);
 }
 
 .navigation a.active {
-   font-size: 1.3em;
+    font-size: 1.2em;
+    color: #2ECC71;
+    transition: 0.25s;
 }
 
 .container {
-    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    margin: 65px auto;
     text-align: center;
+    max-width: 900px;
 }
+.basket {
+    position: relative;
+}
+
+.basket::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -12px;
+    left: 60px;
+    width: 24px;
+    height: 24px;
+    background: #2ECC71;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
