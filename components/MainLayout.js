@@ -6,10 +6,8 @@ import s from '../styles/Layout.module.css'
 
 
 
-export const MainLayout = ({ children }) => {
+export const MainLayout = ({ children, basket}) => {
 
-
-    let count = 5
 
     return (
         <>
@@ -18,7 +16,7 @@ export const MainLayout = ({ children }) => {
             </Head>
             <nav className={s.navigation} >
                 <Link href={'/'} >Каталог</Link>
-                <Link href={'/basket'} className={s.basket} data-count={count} >Корзина</Link>
+                <Link href={'/basket'} className={s.basket} data-count={basket.length}>Корзина</Link>
             </nav>
             <main className={s.container}>
                {children}

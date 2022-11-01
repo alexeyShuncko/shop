@@ -1,9 +1,15 @@
-import { MainLayout } from '../components/MainLayout'
 
-export default function Basket() {
+
+export default function Basket({basket}) {
     return (
-        <MainLayout>
-            Basket
-        </MainLayout>
+        <>
+          {
+            basket.map(el => (
+                <div key={el.id}>
+                    {el.title}
+                </div>
+            ))
+          }
+        </>
     )
 }

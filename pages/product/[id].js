@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MainLayout } from "../../components/MainLayout";
 import s from '../../styles/Product.module.css'
 
 export default function Product({ data }) {
 
+
+
   return (
-    <MainLayout>
+    <>
       <div className={s.tittle}>{data.title}</div>
       <div className={s.content}>
         <Image src={data.image} width={200}  height={250} alt='' priority style={{width: 'auto', height: 'auto'}}/>
@@ -21,7 +22,7 @@ export default function Product({ data }) {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </>
   )
 }
 

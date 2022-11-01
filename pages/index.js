@@ -1,21 +1,36 @@
-import { MainLayout } from '../components/MainLayout'
 import Image from 'next/image'
 import s from '../styles/Catalog.module.css'
 import Link from 'next/link'
 
-export default function Catalog({ data }) {
 
 
+
+
+export default function Catalog({ data, basket, setBasket }) {
+
+  const clickBasketHandler = (e) => {
+
+    if (e.target.innerHTML === 'Удалить') {
+      setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
+    }
+    else {
+      setBasket([...basket, data.find(el => el.id === Number(e.target.dataset.id))])
+    }
+
+
+  }
+
+  console.log(basket);
 
   return (
-    <MainLayout>
+    <>
       <div>
         Online store
       </div>
       <div className={s.catalog}>
         {data.length !== 0 &&
           data.map(el => (
-            <div key={el.id} className={s.card}>
+            <div key={el.title} className={s.card}>
               <div>{el.title}</div>
               <div>
                 <Image
@@ -28,14 +43,21 @@ export default function Catalog({ data }) {
               </div>
               <div className={s.price}>{el.price}$</div>
               <div>
-                <Link className={s.btn} href={'/basket'}>Добавить</Link>
+                {
+                  basket.find(a => a.id === el.id)
+                    ? <button className={s.btn} onClick={clickBasketHandler}
+                      data-id={el.id} style={{ background: '#e26868' }}>Удалить</button>
+                    : <button className={s.btn} onClick={clickBasketHandler}
+                      data-id={el.id} >Добавить</button>
+                }
+
                 <Link className={s.btn} href={`/product/[id]`} as={`/product/${el.id}`}>Подробнее</Link>
               </div>
             </div>
           ))
         }
       </div>
-    </MainLayout>
+    </>
   )
 }
 
