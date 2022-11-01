@@ -9,24 +9,16 @@ import Link from 'next/link'
 export default function Catalog({ data, basket, setBasket }) {
 
   const clickBasketHandler = (e) => {
-
     if (e.target.innerHTML === 'Удалить') {
       setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
     }
     else {
       setBasket([...basket, data.find(el => el.id === Number(e.target.dataset.id))])
     }
-
-
   }
-
-  console.log(basket);
 
   return (
     <>
-      <div>
-        Online store
-      </div>
       <div className={s.catalog}>
         {data.length !== 0 &&
           data.map(el => (
@@ -45,13 +37,15 @@ export default function Catalog({ data, basket, setBasket }) {
               <div>
                 {
                   basket.find(a => a.id === el.id)
-                    ? <button className={s.btn} onClick={clickBasketHandler}
-                      data-id={el.id} style={{ background: '#e26868' }}>Удалить</button>
-                    : <button className={s.btn} onClick={clickBasketHandler}
-                      data-id={el.id} >Добавить</button>
+                    ? <button className='btn' onClick={clickBasketHandler}
+                      data-id={el.id} style={{ '--clr': '#e26868' }}>Удалить</button>
+                    : <button className='btn' onClick={clickBasketHandler}
+                      data-id={el.id} style={{ '--clr': '#2ECC71' }}>Добавить</button>
                 }
 
-                <Link className={s.btn} href={`/product/[id]`} as={`/product/${el.id}`}>Подробнее</Link>
+                <Link className='btn' style={{ '--clr': '#dd57a5' }}
+                href={`/product/[id]`} as={`/product/${el.id}`}
+                >Подробнее</Link>
               </div>
             </div>
           ))

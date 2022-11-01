@@ -2,9 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import s from '../../styles/Product.module.css'
 
-export default function Product({ data }) {
+export default function Product({ data, basket, setBasket }) {
 
-
+  const clickBasketHandler = (e) => {
+    if (e.target.innerHTML === 'Удалить') {
+      setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
+    }
+    else {
+      setBasket([...basket, data])
+    }
+  }
 
   return (
     <>
@@ -17,8 +24,14 @@ export default function Product({ data }) {
           <div className={s.list}><span>Рейтинг:</span><span>{data.rating.rate}</span></div>
           <div className={s.list}><span>Цена:</span><span className={s.bold}>{data.price}$</span></div>
           <div>
-            <Link href={'/'} className={s.btn}>В каталог</Link>
-            <Link href={'/'} className={s.btn}>Добавить</Link>
+          {
+                  basket.find(a => a.id === data.id)
+                    ? <button className='btn'  onClick={clickBasketHandler}
+                      data-id={data.id} style={{ '--clr': '#e26868' }}>Удалить</button>
+                    : <button className='btn' style={{ '--clr': '#2ECC71' }} onClick={clickBasketHandler}
+                      data-id={data.id} >Добавить</button>
+                }
+            <Link href={'/'} className='btn' style={{ '--clr': '#dd57a5' }}>В каталог</Link>
           </div>
         </div>
       </div>

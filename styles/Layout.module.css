@@ -30,8 +30,7 @@
     position: relative;
 }
 
-.basket::after {
-    content: attr(data-count);
+.count {
     position: absolute;
     top: -12px;
     left: 60px;
