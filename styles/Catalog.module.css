@@ -15,8 +15,19 @@
     border-radius: 10px;
 }
 
+
+.title {
+    margin-bottom: 10px;
+}
+
 .price {
     font-weight: bold;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
 }
 
 

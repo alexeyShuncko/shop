@@ -1,12 +1,19 @@
 import Image from 'next/image'
 import s from '../styles/Catalog.module.css'
 import Link from 'next/link'
+import { useState } from 'react'
 
 
 
 
 
 export default function Catalog({ data, basket, setBasket }) {
+
+  const [category, setCategory] = useState('all')
+  const [products, setProducts] = useState(data)
+  const [value, setValue] = useState('')
+
+
 
   const clickBasketHandler = (e) => {
     if (e.target.innerHTML === 'Удалить') {
@@ -17,13 +24,48 @@ export default function Catalog({ data, basket, setBasket }) {
     }
   }
 
+  const categoryChangeHandler = (e) => {
+    setCategory(e.target.value);
+    if (e.target.value === 'all') {
+      setProducts(data)
+    }
+    else
+    setProducts(data.filter(el => el.category === e.target.value))
+  }
+
+  const searchChangeHandler = (e) => {
+    
+    setValue(e.target.value)
+    if (e.target.value === '') {
+      setProducts(data)
+    }
+    else 
+    setProducts(products.filter(el=> el.title.includes(e.target.value)))
+  }
+
   return (
     <>
+      <div className={s.filter}>
+        <div >
+          <input placeholder='Поиск ...' value={value} onChange={searchChangeHandler}></input>
+        </div>
+        <div>
+          <span>Категория: </span>
+          <select value={category} onChange={categoryChangeHandler}>
+            <option>all</option>
+            <option>{`men's clothing`}</option>
+            <option>jewelery</option>
+            <option>electronics</option>
+            <option>{`women's clothing`}</option>
+          </select>
+        </div>
+      </div>
       <div className={s.catalog}>
-        {data.length !== 0 &&
-          data.map(el => (
+        {products.length !== 0 
+
+        ? products.map(el => (
             <div key={el.title} className={s.card}>
-              <div>{el.title}</div>
+              <div className={s.title}>{el.title}</div>
               <div>
                 <Image
                   src={`${el.image}`}
@@ -44,11 +86,13 @@ export default function Catalog({ data, basket, setBasket }) {
                 }
 
                 <Link className='btn' style={{ '--clr': '#dd57a5' }}
-                href={`/product/[id]`} as={`/product/${el.id}`}
+                  href={`/product/[id]`} as={`/product/${el.id}`}
                 >Подробнее</Link>
               </div>
             </div>
           ))
+
+          : <div>Ничего не найдено ...</div>
         }
       </div>
     </>
