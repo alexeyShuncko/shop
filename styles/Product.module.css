@@ -1,19 +1,10 @@
-.catalog {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+.tittle {
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
 }
 
-
-.card {
-    padding: 15px 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
-.price {
-    font-weight: bold;
-}
 
 .btn {
     display: inline-block;
@@ -25,7 +16,7 @@
     background: #2ECC71;
     border-radius: 5px;
     margin-left: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     opacity: 0.9;
     transition: 0.25s;
 }
@@ -50,4 +41,27 @@
 
 .btn:nth-child(2):active {
     box-shadow: 0 0 15px #dd57a5, 0 0 35px #dd57a5, 0 0 75px #dd57a5;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.description {
+    margin-bottom: 30px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+
+.bold {
+    font-weight: bold;
+    font-size: 1.3em;
+    letter-spacing: 1px;
 }
