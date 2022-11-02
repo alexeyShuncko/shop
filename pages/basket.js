@@ -1,11 +1,19 @@
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 import s from '../styles/Basket.module.css'
 
-export default function Basket({ basket = [], setBasket }) {
+export default function Basket({ basket = [], setBasket, setVisibl, setText }) {
 
 
-  const clickBasketHandler = (e) => setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
+  const router = useRouter()
+
+  const clickBasketHandler = (e) => {
+    e.stopPropagation()
+    setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
+    setText('Товар удалён из корзины!')
+    setVisibl(true)
+  }
 
   if (basket.length === 0) {
     return (
@@ -22,7 +30,7 @@ export default function Basket({ basket = [], setBasket }) {
   return (
     <>
       {basket.map(el => (
-        <div key={el.id} className={s.product}>
+        <div key={el.id} className={s.product}  onClick={()=> router.push(`/product/${el.id}`)}>
           <Image
             src={`${el.image}`}
             alt=''
@@ -36,11 +44,13 @@ export default function Basket({ basket = [], setBasket }) {
             <div className={s.amountBlock}>
               {
                 el.amount > 1 
-                ? <button onClick={()=> {
+                ? <button onClick={(e)=> {
+                  e.stopPropagation()
                   el.amount = el.amount - 1
                   setBasket([...basket])
                 }}>-</button>
-                : <button onClick={()=> {
+                : <button onClick={(e)=> {
+                  e.stopPropagation()
                   el.amount = el.amount - 1
                   setBasket([...basket])
                 }} disabled>-</button>
@@ -50,11 +60,13 @@ export default function Basket({ basket = [], setBasket }) {
 
               {
                  el.amount < 99 
-                 ? <button onClick={()=> {
+                 ? <button onClick={(e)=> {
+                  e.stopPropagation()
                   el.amount = el.amount + 1
                   setBasket([...basket])
                 }}>+</button>
-                : <button onClick={()=> {
+                : <button onClick={(e)=> {
+                  e.stopPropagation()
                   el.amount = el.amount + 1
                   setBasket([...basket])
                 }} disabled>+</button>

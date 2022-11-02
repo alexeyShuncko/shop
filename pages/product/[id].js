@@ -2,14 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import s from '../../styles/Product.module.css'
 
-export default function Product({ data, basket, setBasket }) {
+export default function Product({ data, basket, setBasket, setVisibl, setText }) {
 
   const clickBasketHandler = (e) => {
     if (e.target.innerHTML === 'Удалить') {
       setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
+      setText('Товар удалён из корзины!')
+      setVisibl(true)
     }
     else {
+      data.amount = 1
       setBasket([...basket, data])
+      setText('Товар добавлен в корзину!')
+      setVisibl(true)
     }
   }
 
@@ -23,7 +28,7 @@ export default function Product({ data, basket, setBasket }) {
           <div className={s.list}><span>Категория:</span><span>{data.category}</span></div>
           <div className={s.list}><span>Рейтинг:</span><span>{data.rating.rate}</span></div>
           <div className={s.list}><span>Цена:</span><span className={s.bold}>{data.price}$</span></div>
-          <div>
+          <div style={{marginTop: '20px'}}>
           {
                   basket.find(a => a.id === data.id)
                     ? <button className='btn'  onClick={clickBasketHandler}

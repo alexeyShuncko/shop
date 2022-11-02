@@ -6,11 +6,16 @@ function MyApp({ Component, pageProps }) {
 
 
   const [basket, setBasket] = useState([])
-
+  const [visibl, setVisibl] = useState(false)
+  const [text, setText] = useState('')
 
   return (
-    <MainLayout basket={basket} >
-      <Component {...pageProps}  basket={basket} setBasket={setBasket}/>
+    <MainLayout basket={basket} visibl={visibl} setVisibl={setVisibl} text={text}>
+      <Component {...pageProps}  
+      basket={basket} setBasket={setBasket} 
+      visibl={visibl} setVisibl={setVisibl}
+      text={text} setText={setText}
+      />
     </MainLayout>
   )
 

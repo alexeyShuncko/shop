@@ -1,5 +1,33 @@
+
+
 .modal {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
+    left: 15px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 10px #ccc;
+    background: #ccc;
+    animation: modal 1s;
+}
+
+@keyframes modal {
+    0%{
+        left: -200px;   
+    }
+    40%{
+        left: 30px;   
+    }
+    100%{
+        left: 15px;  
+    }
+}
+
+.modal button {
+    margin-top: 10px;
 }

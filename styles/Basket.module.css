@@ -2,12 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: none;
     padding: 10px 20px; 
     border-bottom: 1px solid #ccc;
     box-shadow: 0 5px 10px #ccc;
     border-radius: 5px;
     height: 120px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 

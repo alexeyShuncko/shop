@@ -2,13 +2,13 @@ import Image from 'next/image'
 import s from '../styles/Catalog.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
-import { MyModal } from '../components/MyModal'
 
 
 
 
 
-export default function Catalog({ data, basket, setBasket }) {
+
+export default function Catalog({ data, basket, setBasket, visibl, setVisibl, setText }) {
 
   const [category, setCategory] = useState('all')
   const [products, setProducts] = useState(data)
@@ -19,11 +19,16 @@ export default function Catalog({ data, basket, setBasket }) {
   const clickBasketHandler = (e) => {
     if (e.target.innerHTML === 'Удалить') {
       setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
+      setText('Товар удалён из корзины!')
+      setVisibl(true)
     }
     else {
       const product = data.find(el => el.id === Number(e.target.dataset.id))
       product.amount = 1
       setBasket([...basket, product])
+      setText('Товар добавлен в корзину!')
+      setVisibl(true)
+
     }
   }
 
@@ -79,7 +84,7 @@ export default function Catalog({ data, basket, setBasket }) {
                   style={{ width: 'auto', height: 'auto' }} />
               </div>
               <div className={s.price}>{el.price}$</div>
-              <div>
+              <div style={{marginTop: '20px'}}>
                 {
                   basket.find(a => a.id === el.id)
                     ? <button className='btn' onClick={clickBasketHandler}
@@ -98,7 +103,7 @@ export default function Catalog({ data, basket, setBasket }) {
           : <div>Ничего не найдено ...</div>
         }
       </div>
-      <MyModal text={'Товар добавлен в корзину!'} />
+     
     </div>
   )
 }

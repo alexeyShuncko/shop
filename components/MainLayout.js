@@ -3,11 +3,11 @@ import Link from "next/link"
 import s from '../styles/Layout.module.css'
 import { useRouter } from 'next/router'
 import { useEffect } from "react";
+import { MyModal } from "./MyModal";
 
 
 
-
-export const MainLayout = ({ children, basket}) => {
+export const MainLayout = ({ children, basket, visibl, setVisibl, text}) => {
 
     const router = useRouter()
 
@@ -27,7 +27,7 @@ export const MainLayout = ({ children, basket}) => {
 
 
     return (
-        <>
+        <div style={{position: 'relative'}}>
             <Head>
                 <title>Shop</title>
             </Head>
@@ -43,6 +43,7 @@ export const MainLayout = ({ children, basket}) => {
             <main className={s.container}>
                {children}
             </main>
-        </>
+            <MyModal text={text} visibl={visibl} setVisibl={setVisibl}/>
+        </div>
     )
 }
