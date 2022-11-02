@@ -17,6 +17,57 @@
     max-width: 580px;
 }
 
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 320px;
+}
+
+.amount {
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+
+.amountBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.price .amountBlock button {
+    position: relative;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1.6em;
+    font-weight: 500;
+    margin: 5px;
+    width: 30px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.price .amountBlock button:hover {
+    background: #ccc;
+    border-radius: 50%;
+}
+.price .amountBlock button:active {
+    box-shadow: 0 0 10px #ccc, 
+    0 0 30px #ccc, 
+    0 0 70px #ccc,
+    0 0 150px #ccc;;
+    opacity: 1;
+}
+
+
 .price span {
     font-size: 1.3em;
 }

@@ -26,7 +26,6 @@ a {
   background: var(--clr);
   border-radius: 5px;
   margin-left: 10px;
-  margin-top: 20px;
   opacity: 0.9;
   transition: 0.25s;
 }
@@ -55,4 +54,10 @@ option {
 
 input {
   outline: none;
+}
+
+::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import s from '../styles/Catalog.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
+import { MyModal } from '../components/MyModal'
 
 
 
@@ -20,7 +21,9 @@ export default function Catalog({ data, basket, setBasket }) {
       setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
     }
     else {
-      setBasket([...basket, data.find(el => el.id === Number(e.target.dataset.id))])
+      const product = data.find(el => el.id === Number(e.target.dataset.id))
+      product.amount = 1
+      setBasket([...basket, product])
     }
   }
 
@@ -44,7 +47,7 @@ export default function Catalog({ data, basket, setBasket }) {
   }
 
   return (
-    <>
+    <div className={s.container}>
       <div className={s.filter}>
         <div >
           <input placeholder='Поиск ...' value={value} onChange={searchChangeHandler}></input>
@@ -95,7 +98,8 @@ export default function Catalog({ data, basket, setBasket }) {
           : <div>Ничего не найдено ...</div>
         }
       </div>
-    </>
+      <MyModal text={'Товар добавлен в корзину!'} />
+    </div>
   )
 }
 

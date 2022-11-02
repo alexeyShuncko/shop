@@ -15,8 +15,9 @@
 
 .navigation a.active {
     font-size: 1.2em;
-    color: #2ECC71;
-    transition: 0.25s;
+    font-weight: 600;
+    border-bottom: 1px solid black;
+    transition: 0.2s;
 }
 
 .container {
@@ -41,6 +42,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 400;
+ 
+}
+
+.navigation a.active .count {
+    position: absolute;
+    font-weight: 400;
+    font-size: 16px;
+    top: -14px;
+    left: 68px;
 }
 
 
