@@ -3,12 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import s from '../styles/Basket.module.css'
 
-export default function Basket({ basket = [], setBasket, setVisibl, setText }) {
+export default function Basket({ basket = [], setBasket, setVisibl, setText, currency }) {
 
 
   const router = useRouter()
 
   const clickBasketHandler = (e) => {
+    const body = document.querySelector('body')
+    body.style.pointerEvents ='none'
     e.stopPropagation()
     setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
     setText('Товар удалён из корзины!')
@@ -40,7 +42,7 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText }) {
             style={{ width: 'auto', height: 'auto', }} />
 
           <div className={s.title}>{el.title}</div>
-          <div className={s.price}>
+          <div className={s.price} onClick={(e)=> e.stopPropagation()} style={{height: '100%', cursor: 'auto'}}>
             <div className={s.amountBlock}>
               {
                 el.amount > 1 
@@ -53,7 +55,7 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText }) {
                   e.stopPropagation()
                   el.amount = el.amount - 1
                   setBasket([...basket])
-                }} disabled>-</button>
+                }} disabled style={{cursor: 'not-allowed'}}>-</button>
               }
               
               <span className={s.amount}>{el.amount}</span>
@@ -69,11 +71,16 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText }) {
                   e.stopPropagation()
                   el.amount = el.amount + 1
                   setBasket([...basket])
-                }} disabled>+</button>
+                }} disabled style={{cursor: 'not-allowed'}}>+</button>
               }
              
             </div>
-            <span>{(el.price * el.amount).toFixed(2)}$</span>
+            {
+              currency === 'BYN'
+              ?  <span>{(el.price * el.amount*2.5).toFixed(2)} Br</span>
+              :  <span>{(el.price * el.amount).toFixed(2)} $</span>
+            }
+           
             <button className='btn' onClick={clickBasketHandler}
               data-id={el.id} style={{ '--clr': '#e26868' }}>Удалить</button>
           </div>
@@ -82,7 +89,15 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText }) {
       }
       <div className={s.summ}>
         <span>Всего товаров: {basket.map(el => el.amount).reduce((acc, sum)=> acc + sum, 0)}шт.</span>
-        <span>Итого: {basket.map(el => el.price * el.amount).reduce((acc, sum) => acc + sum, 0).toFixed(2)}$</span>
+        {
+          currency === 'BYN'
+          ?  <span>Итого: {basket
+            .map(el => el.price * el.amount * 2.5)
+            .reduce((acc, sum) => acc + sum, 0).toFixed(2)} Br</span>
+          :  <span>Итого: {basket
+            .map(el => el.price * el.amount)
+            .reduce((acc, sum) => acc + sum, 0).toFixed(2)} $</span>
+        }
       </div>
       <div>
         <Link className='btn' style={{ '--clr': '#dd57a5' }} href={'/'}>За покупками!</Link>

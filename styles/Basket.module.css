@@ -57,7 +57,7 @@
     transition: 0.5s;
 }
 
-.price .amountBlock button:hover {
+.price .amountBlock button:hover:enabled {
     background: #ccc;
     border-radius: 50%;
 }
@@ -95,37 +95,3 @@
 }
 
 
-.btn {
-    font-size: 1em;
-    outline: none;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    background: #2ECC71;
-    border-radius: 5px;
-    margin-left: 10px;
-    opacity: 0.9;
-    transition: 0.25s;
-}
-
-.btn:nth-child(2) {
-    background: #dd57a5;
-}
-
-.btn:hover {
-    opacity: 1;
-    letter-spacing: 1px;
-    box-shadow: 0 0 15px #2ECC71;
-}
-
-.btn:nth-child(2):hover {
-    box-shadow: 0 0 15px #dd57a5;
-}
-
-.btn:active {
-    box-shadow: 0 0 15px #2ECC71, 0 0 35px #2ECC71, 0 0 75px #2ECC71;
-}
-
-.btn:nth-child(2):active {
-    box-shadow: 0 0 15px #dd57a5, 0 0 35px #dd57a5, 0 0 75px #dd57a5;
-}

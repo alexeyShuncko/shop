@@ -6,10 +6,12 @@ export const MyModal = ({ text, visibl, setVisibl }) => {
     if (visibl) {
         setTimeout(() => {
             setVisibl(false)
-        }, 1500);
+            const body = document.querySelector('body')
+            body.style.pointerEvents ='auto'
+        }, 1200);
     }
 
-    let color =text.includes('из') ? '#e26868' :'#2ECC71'
+    let color = text.includes('из') ? '#e26868' :'#2ECC71'
 
     return (
         <>

@@ -13,6 +13,10 @@
     z-index: 10;
 }
 
+.navigation a {
+    margin-left: 20px;
+}
+
 .navigation a.active {
     font-size: 1.2em;
     font-weight: 600;
@@ -55,3 +59,6 @@
 }
 
 
+.option {
+background: #ccc !important;
+}

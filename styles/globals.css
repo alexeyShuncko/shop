@@ -45,7 +45,9 @@ a {
 select {
   outline: none;
   cursor: pointer;
-
+  padding: 5px;
+  border-radius: 5px;
+  background: transparent;
 }
 option {
   font-size: 1.1em;

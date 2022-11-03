@@ -35,5 +35,17 @@
     margin: 20px 0;
 }
 
+.filter input,
+.filter select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: 0.5s;
+}
 
+.filter input:focus,
+.filter select:focus {
+    box-shadow: 0 5px 10px #ccc;
+    border: 1px solid #6b6c77;
+}
 
