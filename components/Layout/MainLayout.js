@@ -8,7 +8,7 @@ import { SelectCurrency } from "./SelectCurrency";
 
 
 
-export const MainLayout = ({ children, basket, visibl, setVisibl, text, currency, setCurrency}) => {
+export const MainLayout = ({ children, basket, visibl, setVisibl, text, setText, currency, setCurrency}) => {
 
     const router = useRouter()
 
@@ -34,8 +34,10 @@ export const MainLayout = ({ children, basket, visibl, setVisibl, text, currency
             </Head>
             <nav className={s.navigation} >
                 <div>
-                <SelectCurrency currency={currency} setCurrency={setCurrency} />
-                <Link href={'/'} >Каталог</Link>
+                <SelectCurrency 
+                currency={currency} setCurrency={setCurrency} 
+                setText={setText} setVisibl={setVisibl}/>
+                <Link href={'/'} className={s.active}>Каталог</Link>
                 </div>
                 <Link href={'/basket'} >
                     <div className={s.basket}>
@@ -47,7 +49,7 @@ export const MainLayout = ({ children, basket, visibl, setVisibl, text, currency
             <main className={s.container}>
                {children}
             </main>
-            <MyModal text={text} visibl={visibl} setVisibl={setVisibl}/>
+            <MyModal text={text} setVisibl={setVisibl} visibl={visibl} />
         </>
     )
 }

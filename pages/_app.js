@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <MainLayout basket={basket} 
     visibl={visibl} setVisibl={setVisibl} 
-    text={text} 
+    text={text} setText={setText}
     currency={currency} setCurrency={setCurrency}>
       <Component {...pageProps}  
       basket={basket} setBasket={setBasket} 

@@ -11,7 +11,7 @@ export const MyModal = ({ text, visibl, setVisibl }) => {
         }, 1200);
     }
 
-    let color = text.includes('из') ? '#e26868' :'#2ECC71'
+    let color = text.includes('удалён') ? '#e26868' :'#2ECC71'
 
     return (
         <>
