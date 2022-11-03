@@ -47,13 +47,16 @@ export default function Product({ data: serverData, basket, setBasket, setVisibl
 
   return (
     <>
-      <div className={s.tittle}>{data.title}</div>
+      <div className={s.title}>{data.title}</div>
       <div className={s.content}>
         <Image src={data.image} width={200} height={250} alt='' priority style={{ width: 'auto', height: 'auto' }} />
         <div>
           <div className={s.description}>{data.description}</div>
-          <div className={s.list}><span>Категория:</span><span>{data.category}</span></div>
-          <div className={s.list}><span>Рейтинг:</span><span>{data.rating.rate}</span></div>
+          <div className={s.list}><span>Категория:</span><span className={s.bold}>{data.category}</span></div>
+          <div className={s.list}><span>Рейтинг:</span>
+          <span className={s.rating} style={{'--rating': data.rating.rate}} 
+          aria-label={`Rating of this product is ${data.rating.rate} out of 5.`}></span>
+          </div>
           <div className={s.list}><span>Цена:</span>
           {
             currency === 'BYN'
@@ -79,12 +82,14 @@ export default function Product({ data: serverData, basket, setBasket, setVisibl
 
 
 
-Product.getInitialProps = async ({ query, req }) => {
+Product.getInitialProps = async ({ query, req, res }) => {
   if (!req) {
     return { data: null }
   }
+  
   const response = await fetch(`https://fakestoreapi.com/products/${query.id}`)
   const data = await response.json()
+  
   return {
     data
   }

@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
 
 
   const [basket, setBasket] = useState([])
-  const [currency, setCurrency] = useState([])
+  const [currency, setCurrency] = useState('USD')
   const [visibl, setVisibl] = useState(false)
   const [text, setText] = useState('')
 

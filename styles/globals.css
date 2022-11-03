@@ -1,3 +1,10 @@
+:root {
+  --star-size: 40px;
+  --star-color: #ccc;
+  --star-background: #fc0;
+}
+
+
 html,
 body {
   padding: 0;
@@ -47,19 +54,8 @@ select {
   cursor: pointer;
   padding: 5px;
   border-radius: 5px;
-  background: transparent;
-}
-option {
-  font-size: 1.1em;
-  text-align: center;
 }
 
 input {
   outline: none;
-}
-
-::-webkit-outer-spin-button,
-::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
