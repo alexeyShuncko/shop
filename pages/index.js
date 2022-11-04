@@ -3,6 +3,7 @@ import s from '../styles/Catalog.module.css'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { Loading } from '../components/Loading'
+import { useRouter } from 'next/router'
 
 
 
@@ -15,8 +16,12 @@ export default function Catalog({ data:serverData, basket, setBasket, setVisibl,
   const [products, setProducts] = useState(data)
   const [value, setValue] = useState('')
 
+  const router = useRouter()
+
 
   const clickBasketHandler = (e) => {
+    e.stopPropagation()
+
     const body = document.querySelector('body')
     body.style.pointerEvents ='none'
     
@@ -103,7 +108,7 @@ export default function Catalog({ data:serverData, basket, setBasket, setVisibl,
         {products.length !== 0 
 
         ? products.map(el => (
-            <div key={el.title} className={s.card}>
+            <div key={el.title} className={s.card} onClick={()=> router.push(`./product/${el.id}`)}>
               <div className={s.title}>{el.title}</div>
               <div>
                 <Image
@@ -131,9 +136,9 @@ export default function Catalog({ data:serverData, basket, setBasket, setVisibl,
                       data-id={el.id} style={{ '--clr': '#2ECC71' }}>Добавить</button>
                 }
 
-                <Link className='btn' style={{ '--clr': '#dd57a5' }}
+                {/* <Link className='btn' style={{ '--clr': '#dd57a5' }}
                   href={`/product/[id]`} as={`/product/${el.id}`}
-                >Подробнее</Link>
+                >Подробнее</Link> */}
               </div>
             </div>
           ))

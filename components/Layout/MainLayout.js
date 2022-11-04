@@ -39,6 +39,7 @@ export const MainLayout = ({ children, basket, visibl, setVisibl, text, setText,
                 setText={setText} setVisibl={setVisibl}/>
                 <Link href={'/'} className={s.active}>Каталог</Link>
                 </div>
+                <span className={s.nameShop}>Интернет-магазин</span>
                 <Link href={'/basket'} >
                     <div className={s.basket}>
                     { basket.length !==0 && <span className={s.count}>{basket.length}</span> }

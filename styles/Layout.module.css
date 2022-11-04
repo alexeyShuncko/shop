@@ -24,6 +24,12 @@
     transition: 0.2s;
 }
 
+
+.nameShop {
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -37,17 +43,28 @@
 
 .count {
     position: absolute;
+    font-size: 1em;
     top: -12px;
+    /* font-weight: inherit;
+    font-family: inherit; */
     left: 60px;
     width: 24px;
-    height: 24px;
+    height: 24px; 
     background: #2ECC71;
     border-radius: 50%;
+    line-height: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 400;
- 
+    animation: fontSize 0.5s ease-in; 
+}
+@keyframes fontSize {
+    0%{
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .navigation a.active .count {
@@ -56,9 +73,4 @@
     font-size: 16px;
     top: -14px;
     left: 68px;
-}
-
-
-.option {
-background: #ccc !important;
 }

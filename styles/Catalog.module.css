@@ -18,6 +18,14 @@
     border: 1px solid #ccc;
     box-shadow: 0 5px 10px #ccc;
     border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card:hover {
+    box-shadow: 0px 5px 10px #2ECC71,
+    0px 5px 15px #2ECC71;
+    transform: translateY(-5px);
 }
 
 
