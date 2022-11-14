@@ -62,7 +62,6 @@ export default function Catalog(
           .filter(el => el.title.toLowerCase().includes(e.target.value.toLowerCase())))
   }
 
-
   useEffect(() => {
     async function load() {
       const response = await fetch('https://fakestoreapi.com/products')

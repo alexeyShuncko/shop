@@ -6,11 +6,13 @@ import { useEffect } from "react";
 import { MyModal } from "../MyModal";
 import { SelectCurrency } from "./SelectCurrency";
 import { Footer } from "./Footer";
+import { ButtonUp } from "../ButtonUp";
 
 
 
 export const MainLayout = (
-    { children, basket, visibl, setVisibl, text, setText, currency, setCurrency, category,setCategory}) => {
+    { children, basket, visibl, setVisibl, text, setText, 
+        currency, setCurrency, category,setCategory, scroll, setScroll}) => {
 
     const router = useRouter()
 
@@ -27,7 +29,13 @@ export const MainLayout = (
     },[router])
     
 
+    useEffect(()=> {
+        window.addEventListener('scroll', function() {
+          setScroll(this.scrollY)
+        });
+      },[setScroll])
 
+   
 
     return (
         <>
@@ -54,6 +62,10 @@ export const MainLayout = (
             </main>
           <Footer category={category} setCategory={setCategory}/>
             <MyModal text={text} setVisibl={setVisibl} visibl={visibl} />
+            {
+                scroll > 450 &&   <ButtonUp />
+            }
+          
         </>
     )
 }

@@ -1,0 +1,33 @@
+
+.btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    background: #2ECC71;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.btn span {
+    display: block;
+    height: 25px;
+    width: 25px;
+    border-left: 3px solid #fff;
+    border-top: 3px solid #fff;
+    transform: rotate(45deg);
+    transition: 0.25s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px #2ECC71;
+  }
+.btn:hover span {
+    transform: rotate(45deg) translateY(-3px) translateX(-3px);
+  }
+  
+.btn:active {
+    box-shadow: 0 0 15px #2ECC71, 0 0 35px #2ECC71, 0 0 75px #2ECC71;
+  }
+  
