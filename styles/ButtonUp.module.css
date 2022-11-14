@@ -4,7 +4,7 @@
     bottom: 20px;
     right: 20px;
     border-radius: 50%;
-    background: #2ECC71;
+    background: var(--success);
     padding: 15px;
     cursor: pointer;
     border: none;
@@ -21,13 +21,13 @@
 }
 
 .btn:hover {
-    box-shadow: 0 0 15px #2ECC71;
+    box-shadow: 0 0 15px var(--success);
   }
 .btn:hover span {
-    transform: rotate(45deg) translateY(-3px) translateX(-3px);
+    transform: rotate(45deg) translateY(-2px) translateX(-2px);
   }
   
 .btn:active {
-    box-shadow: 0 0 15px #2ECC71, 0 0 35px #2ECC71, 0 0 75px #2ECC71;
+    box-shadow: 0 0 15px var(--success), 0 0 35px var(--success), 0 0 75px var(--success);
   }
   

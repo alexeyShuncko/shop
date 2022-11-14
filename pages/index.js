@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import s from '../styles/Catalog.module.css'
-import Link from 'next/link'
 import { useState, useEffect, useLayoutEffect } from 'react'
 import { Loading } from '../components/Loading'
 import { useRouter } from 'next/router'
@@ -8,9 +7,8 @@ import { useRouter } from 'next/router'
 
 
 
-
 export default function Catalog(
-  { data: serverData, basket, setBasket, setVisibl, setText, currency,category,setCategory}) {
+  { data: serverData, basket, setBasket, setVisibl, setText, currency, category, setCategory }) {
 
   const [data, setData] = useState(serverData)
   const [products, setProducts] = useState(data)
@@ -81,8 +79,8 @@ export default function Catalog(
     }
     else
       setProducts(data && data.filter(el => el.category === category))
-  
-  },[category, data])
+
+  }, [category, data])
 
 
 
@@ -137,15 +135,15 @@ export default function Catalog(
               <div style={{ marginTop: '20px' }}>
                 {
                   basket.find(a => a.id === el.id)
-                    ? <button className='btn' onClick={clickBasketHandler}
-                      data-id={el.id} style={{ '--clr': '#e26868' }}>Удалить</button>
-                    : <button className='btn' onClick={clickBasketHandler}
-                      data-id={el.id} style={{ '--clr': '#2ECC71' }}>Добавить</button>
+                    ? <button
+                      className='btn remove'
+                      onClick={clickBasketHandler}
+                      data-id={el.id}>Удалить</button>
+                    : <button
+                      className='btn success'
+                      onClick={clickBasketHandler}
+                      data-id={el.id}>Добавить</button>
                 }
-
-                {/* <Link className='btn' style={{ '--clr': '#dd57a5' }}
-                  href={`/product/[id]`} as={`/product/${el.id}`}
-                >Подробнее</Link> */}
               </div>
             </div>
           ))

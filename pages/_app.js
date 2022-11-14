@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }) {
 
   const [scroll, setScroll] = useState(0)
 
-
   const [basket, setBasket] = useState([])
   const [currency, setCurrency] = useState('USD')
   const [visibl, setVisibl] = useState(false)

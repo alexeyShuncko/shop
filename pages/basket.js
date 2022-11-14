@@ -21,7 +21,7 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
     return (
       <div className={s.message}>
         <div >Корзина пока пуста.</div>
-        <Link className='btn' style={{ '--clr': '#dd57a5' }} href={'/'}>За покупкам!</Link>
+        <Link className='btn normal'  href={'/'}>За покупкам!</Link>
       </div>
     )
   }
@@ -81,8 +81,8 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
               :  <span>{(el.price * el.amount).toFixed(2)} $</span>
             }
            
-            <button className='btn' onClick={clickBasketHandler}
-              data-id={el.id} style={{ '--clr': '#e26868' }}>Удалить</button>
+            <button className='btn remove' onClick={clickBasketHandler}
+              data-id={el.id} >Удалить</button>
           </div>
         </div>
       ))
@@ -100,8 +100,8 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
         }
       </div>
       <div>
-        <Link className='btn' style={{ '--clr': '#dd57a5' }} href={'/'}>За покупками!</Link>
-        <Link className='btn' style={{ '--clr': '#2ECC71' }} href={'/payment'}>К оплате.</Link>
+        <Link className='btn normal'  href={'/'}>За покупками!</Link>
+        <Link className='btn success'  href={'/payment'}>К оплате.</Link>
       </div>
     </>
   )

@@ -67,12 +67,12 @@ export default function Product({ data: serverData, basket, setBasket, setVisibl
           <div style={{ marginTop: '20px' }}>
             {
               basket.find(a => a.id === data.id)
-                ? <button className='btn' onClick={clickBasketHandler}
-                  data-id={data.id} style={{ '--clr': '#e26868' }}>Удалить</button>
-                : <button className='btn' style={{ '--clr': '#2ECC71' }} onClick={clickBasketHandler}
+                ? <button className='btn remove' onClick={clickBasketHandler}
+                  data-id={data.id} >Удалить</button>
+                : <button className='btn success' onClick={clickBasketHandler}
                   data-id={data.id} >Добавить</button>
             }
-            <Link href={'/'} className='btn' style={{ '--clr': '#dd57a5' }}>В каталог</Link>
+            <Link href={'/'} className='btn normal'>В каталог</Link>
           </div>
         </div>
       </div>
