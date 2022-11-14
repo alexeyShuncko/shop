@@ -1,3 +1,6 @@
+
+
+
 .navigation {
     position: fixed;
     top: 0;
@@ -24,6 +27,9 @@
     transition: 0.2s;
 }
 
+.container {
+    min-height: 33vh;
+}
 
 .nameShop {
     font-size: 1.4em;
@@ -45,8 +51,6 @@
     position: absolute;
     font-size: 1em;
     top: -12px;
-    /* font-weight: inherit;
-    font-family: inherit; */
     left: 60px;
     width: 24px;
     height: 24px; 
@@ -60,7 +64,7 @@
 }
 @keyframes fontSize {
     0%{
-        transform: scale(1.5);
+        transform: scale(2);
     }
     100% {
         transform: scale(1);
@@ -73,4 +77,43 @@
     font-size: 16px;
     top: -14px;
     left: 68px;
+}
+
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #ccc;
+    height: 300px;
+    box-shadow: 0 -3px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+.footer div:nth-child(1) {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.footer div:nth-child(2) {
+    font-size: 0.8em;
+}
+
+.footer span {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.footer li {
+    padding-left: 30px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.footer li:hover {
+    font-weight: 600;
 }

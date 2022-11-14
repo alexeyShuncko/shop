@@ -61,7 +61,7 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
               <span className={s.amount}>{el.amount}</span>
 
               {
-                 el.amount < 99 
+                 el.amount < 10 
                  ? <button onClick={(e)=> {
                   e.stopPropagation()
                   el.amount = el.amount + 1

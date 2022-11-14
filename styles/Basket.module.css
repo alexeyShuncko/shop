@@ -67,7 +67,7 @@
     border-radius: 50%;
 }
 
-.price .amountBlock button:active {
+.price .amountBlock button:enabled:active {
     
     box-shadow: 0 0 10px #ccc,
         0 0 30px #ccc,
@@ -93,7 +93,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 75vh;
+    min-height: 33vh;
     gap: 20px;
 }
 

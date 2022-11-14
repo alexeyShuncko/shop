@@ -5,10 +5,12 @@ import { useRouter } from 'next/router'
 import { useEffect } from "react";
 import { MyModal } from "../MyModal";
 import { SelectCurrency } from "./SelectCurrency";
+import { Footer } from "./Footer";
 
 
 
-export const MainLayout = ({ children, basket, visibl, setVisibl, text, setText, currency, setCurrency}) => {
+export const MainLayout = (
+    { children, basket, visibl, setVisibl, text, setText, currency, setCurrency, category,setCategory}) => {
 
     const router = useRouter()
 
@@ -50,6 +52,7 @@ export const MainLayout = ({ children, basket, visibl, setVisibl, text, setText,
             <main className={s.container}>
                {children}
             </main>
+          <Footer category={category} setCategory={setCategory}/>
             <MyModal text={text} setVisibl={setVisibl} visibl={visibl} />
         </>
     )
