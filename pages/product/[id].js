@@ -27,8 +27,6 @@ export default function Product({ data: serverData, basket, setBasket, setVisibl
     )
   }
 
-
-
   const clickBasketHandler = (e) => {
     const body = document.querySelector('body')
     body.style.pointerEvents ='none'

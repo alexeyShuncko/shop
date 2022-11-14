@@ -7,6 +7,8 @@ import { MyModal } from "../MyModal";
 import { SelectCurrency } from "./SelectCurrency";
 import { Footer } from "./Footer";
 import { ButtonUp } from "../ButtonUp";
+import Image from "next/image"
+import basketLogo from '../../public/basket.png';
 
 
 
@@ -18,12 +20,11 @@ export const MainLayout = (
 
     useEffect(()=> {
         let list = document.querySelectorAll('a')
-        if (router.pathname.length > 3 && router.pathname.length < 8) {
-            list.forEach(el => el.classList.remove(s.active))
+        list.forEach(el => el.classList.remove(s.active))
+        if (router.pathname.length > 3 && router.pathname.length < 8) { 
             list[1].classList.add(s.active)
         }
-        else  {
-            list.forEach(el => el.classList.remove(s.active))
+        else if (router.pathname === '/') {
             list[0].classList.add(s.active)
         }
     },[router])
@@ -53,7 +54,8 @@ export const MainLayout = (
                 <Link href={'/basket'} >
                     <div className={s.basket}>
                     { basket.length !==0 && <span className={s.count}>{basket.length}</span> }
-                    Корзина
+                    Корзина 
+                    <Image src={basketLogo} alt='Корзина' width={30} height={30}/> 
                     </div>
                    </Link>
             </nav>

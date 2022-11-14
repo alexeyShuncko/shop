@@ -16,6 +16,7 @@
     width: 25px;
     border-left: 3px solid #fff;
     border-top: 3px solid #fff;
+    border-radius: 5px;
     transform: rotate(45deg);
     transition: 0.25s;
 }
