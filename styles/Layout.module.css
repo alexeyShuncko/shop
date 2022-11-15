@@ -20,8 +20,8 @@
 
 .navigation a.active {
     font-size: 1.2em;
-    font-weight: 600;
-    text-shadow: 2px -2px 8px;
+    font-weight: 500;
+    text-shadow: 3px -3px 10px;
     transition: 0.2s;
 }
 
@@ -73,9 +73,9 @@
 }
 
 .navigation a.active .count {
-    font-weight: 400;
+    /* font-weight: 400; */
     font-size: 16px;
-    text-shadow: none;
+    /* text-shadow: none; */
 }
 
 

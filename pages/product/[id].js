@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { Loading } from "../../components/Loading";
 import s from '../../styles/Product.module.css'
 
-export default function Product({ data: serverData, basket, setBasket, setVisibl, setText, currency }) {
+export default function Product(
+  { data: serverData, basket, setBasket, setVisibl, setText, currency,setCategory }) {
 
   const [data, setData] = useState(serverData)
   const router = useRouter()
@@ -42,6 +43,10 @@ export default function Product({ data: serverData, basket, setBasket, setVisibl
       setVisibl(true)
     }
   }
+  const categoryClickHandler = (e) => {
+    setCategory(e.target.innerHTML)
+    router.push('/')
+  }
 
   return (
     <>
@@ -50,7 +55,10 @@ export default function Product({ data: serverData, basket, setBasket, setVisibl
         <Image src={data.image} width={200} height={250} alt='' priority style={{ width: 'auto', height: 'auto' }} />
         <div>
           <div className={s.description}>{data.description}</div>
-          <div className={s.list}><span>Категория:</span><span className={s.bold}>{data.category}</span></div>
+          <div className={s.list}>
+            <span>Категория:</span>
+            <span className={s.bold} style={{cursor: 'pointer'}}onClick={categoryClickHandler}>{data.category}</span>
+            </div>
           <div className={s.list}><span>Рейтинг:</span>
           <span className={s.rating} style={{'--rating': data.rating.rate}} 
           aria-label={`Rating of this product is ${data.rating.rate} out of 5.`}></span>
