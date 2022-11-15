@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
   const [visibl, setVisibl] = useState(false)
   const [text, setText] = useState('')
   const [category, setCategory] = useState('all')
+  const [sort, setSort] = useState('без сортировки')
 
   return (
     <MainLayout basket={basket} 
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
       visibl={visibl} setVisibl={setVisibl}
       text={text} setText={setText} currency={currency} 
       category={category} setCategory={setCategory}
+      sort={sort} setSort={setSort}
       />
     </MainLayout>
   )

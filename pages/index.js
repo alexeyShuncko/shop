@@ -8,11 +8,12 @@ import { useRouter } from 'next/router'
 
 
 export default function Catalog(
-  { data: serverData, basket, setBasket, setVisibl, setText, currency, category, setCategory }) {
+  { data: serverData, basket, setBasket, setVisibl, setText, currency, category, setCategory, sort, setSort }) {
 
   const [data, setData] = useState(serverData)
   const [products, setProducts] = useState(data)
   const [value, setValue] = useState('')
+  
 
   const router = useRouter()
 
@@ -39,25 +40,24 @@ export default function Catalog(
 
   const categoryChangeHandler = (e) => {
     setCategory(e.target.value);
-    if (e.target.value === 'all') {
-      setProducts(data)
-    }
-    else
-      setProducts(data.filter(el => el.category === e.target.value))
   }
 
   const searchChangeHandler = (e) => {
-
     setValue(e.target.value)
-    if (e.target.value === '') {
-      setProducts(category === 'all' ? data : data.filter(el => el.category === category))
+  }
+
+  const sortingChangeHandler = (e) => {
+    setSort(e.target.value)
+  }
+
+  const sortingHelper =(arr=[], option)=> {
+    if (option ==='по возрастанию') {
+      return arr.sort((a,b)=> a.price - b.price)
     }
-    else
-      setProducts(category === 'all'
-        ? data.filter(el => el.title.toLowerCase().includes(e.target.value.toLowerCase()))
-        : data
-          .filter(el => el.category === category)
-          .filter(el => el.title.toLowerCase().includes(e.target.value.toLowerCase())))
+    else if (option ==='по убыванию') {
+      return arr.sort((a,b)=> b.price - a.price)
+    }
+    else return arr.sort((a,b)=> a.id - b.id)
   }
 
   useEffect(() => {
@@ -74,13 +74,17 @@ export default function Catalog(
   }, [data])
 
   useLayoutEffect(() => {
-    if (category === 'all') {
-      setProducts(data)
+    if (category === 'all' && data) {
+      setProducts(
+        sortingHelper(data.filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort)
+       )
     }
     else
-      setProducts(data && data.filter(el => el.category === category))
+      setProducts(data && sortingHelper(data
+      .filter(el => el.category === category)
+      .filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort))
 
-  }, [category, data])
+  }, [category, data, value, sort])
 
 
 
@@ -97,6 +101,14 @@ export default function Catalog(
       <div className={s.filter}>
         <div >
           <input placeholder='Поиск ...' value={value} onChange={searchChangeHandler}></input>
+        </div>
+        <div>
+        <span>Сортировка цены: </span>
+          <select value={sort} onChange={sortingChangeHandler}>
+            <option>без сортировки</option>  
+            <option>по возрастанию</option>
+            <option>по убыванию</option>
+          </select>
         </div>
         <div>
           <span>Категория: </span>
