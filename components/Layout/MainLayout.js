@@ -36,7 +36,12 @@ export const MainLayout = (
    
     return (
         <>
-            <Head><title>Shop</title></Head>
+            <Head>
+                <title>Shop</title>
+                <meta name='keywords' content='market, products, next' />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="description" content="Online store developed with next.js" />
+            </Head>
             <Navigation  
             currency={currency} setCurrency={setCurrency} 
             setText={setText} setVisibl={setVisibl} basket={basket}/>
