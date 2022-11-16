@@ -55,6 +55,7 @@ export default function Product(
         <Image src={data.image} width={200} height={250} alt='' priority style={{ width: 'auto', height: 'auto' }} />
         <div>
           <div className={s.description}>{data.description}</div>
+          <div className={s.blockList}>
           <div className={s.list}>
             <span>Категория:</span>
             <span className={s.bold} style={{cursor: 'pointer'}}onClick={categoryClickHandler}>{data.category}</span>
@@ -80,6 +81,9 @@ export default function Product(
             }
             <Link href={'/'} className='btn normal'  style={{ marginLeft: '10px' }}>В каталог</Link>
           </div>
+
+          </div>
+         
         </div>
       </div>
     </>
