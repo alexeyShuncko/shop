@@ -6,7 +6,7 @@
     padding: 10px 20px;
     box-shadow: 0 5px 10px #ccc;
     border-radius: 5px;
-    height: 120px;
+    min-height: 120px;
     margin-bottom: 10px;
     cursor: pointer;
     transition: 0.5s;
@@ -17,11 +17,17 @@
     0px 0px 10px #2ECC71;
 }
 
+.productImgTitle {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
 
 .title {
     font-size: 1.2em;
-    padding: 0 20px;
-    max-width: 580px;
+    width: 100%; 
 }
 
 .price {
@@ -55,7 +61,6 @@
     background: none;
     font-size: 1.6em;
     font-weight: 500;
-    margin: 5px;
     width: 30px;
     cursor: pointer;
     opacity: 0.8;
@@ -99,4 +104,22 @@
 
 .message div {
     font-size: 1.5em;
+}
+
+
+@media (max-width: 800px) {
+    .product {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+}
+
+@media (max-width: 460px) {
+    .summ {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
 }

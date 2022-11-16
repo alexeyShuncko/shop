@@ -33,6 +33,7 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
     <>
       {basket.map(el => (
         <div key={el.id} className={s.product}  onClick={()=> router.push(`/product/${el.id}`)}>
+          <div className={s.productImgTitle}>
           <Image
             src={`${el.image}`}
             alt=''
@@ -42,6 +43,8 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
             style={{ width: 'auto', height: 'auto', }} />
 
           <div className={s.title}>{el.title}</div>
+          </div>
+          
           <div className={s.price} onClick={(e)=> e.stopPropagation()} style={{height: '100%', cursor: 'auto'}}>
             <div className={s.amountBlock}>
               {
@@ -81,7 +84,7 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
               :  <span>{(el.price * el.amount).toFixed(2)} $</span>
             }
            
-            <button className='btn remove' onClick={clickBasketHandler}
+            <button className='btn remove' onClick={clickBasketHandler} style={{marginTop: 0}}
               data-id={el.id} >Удалить</button>
           </div>
         </div>

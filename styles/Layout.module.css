@@ -53,11 +53,7 @@
     padding: 0 20px ;
 }
 
-@media (max-width: 900px) {
-    .container{
-        margin: 70px auto;
-    } 
-}
+
 .basket {
     position: relative;
     display: flex;
@@ -136,6 +132,12 @@
 }
 
 
+
+@media (max-width: 900px) {
+    .container{
+        margin: 70px auto;
+    } 
+}
 
 @media (max-width: 660px) {
     .nameShop {
