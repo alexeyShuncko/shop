@@ -61,6 +61,8 @@
     border: 1px solid #6b6c77;
 }
 
+
+
 @media (max-width: 900px) {
     .catalog {
         
@@ -79,4 +81,9 @@
         
         grid-template-columns: 300px;
     }
+    /* .filterItem {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    } */
 }

@@ -102,7 +102,7 @@ export default function Catalog(
         <div >
           <input placeholder='Поиск ...' value={value} onChange={searchChangeHandler}></input>
         </div>
-        <div>
+        <div className={s.filterItem}>
         <span>Сортировка цены: </span>
           <select value={sort} onChange={sortingChangeHandler}>
             <option>без сортировки</option>  
@@ -110,7 +110,7 @@ export default function Catalog(
             <option>по убыванию</option>
           </select>
         </div>
-        <div>
+        <div className={s.filterItem}>
           <span>Категория: </span>
           <select value={category} onChange={categoryChangeHandler}>
             <option>all</option>
