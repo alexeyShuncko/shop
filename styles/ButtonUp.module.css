@@ -1,4 +1,3 @@
-
 .btn {
     position: fixed;
     bottom: 20px;
@@ -10,6 +9,7 @@
     border: none;
     outline: none;
 }
+
 .btn span {
     display: block;
     height: 25px;

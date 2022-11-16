@@ -1,5 +1,5 @@
-import Image from "next/image"
-import  loading  from '../public/Loading.svg';
+import Image from 'next/image'
+import  loading  from '../public/Loading.svg'
 
 export const Loading =()=> {
     return (

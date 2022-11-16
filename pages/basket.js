@@ -5,7 +5,6 @@ import s from '../styles/Basket.module.css'
 
 export default function Basket({ basket = [], setBasket, setVisibl, setText, currency }) {
 
-
   const router = useRouter()
 
   const clickBasketHandler = (e) => {
@@ -26,9 +25,6 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
     )
   }
 
-
-
-
   return (
     <>
       {basket.map(el => (
@@ -41,11 +37,11 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
             height={70}
             priority
             style={{ width: 'auto', height: 'auto', }} />
-
           <div className={s.title}>{el.title}</div>
           </div>
-          
-          <div className={s.price} onClick={(e)=> e.stopPropagation()} style={{height: '100%', cursor: 'auto'}}>
+          <div className={s.price} 
+          onClick={(e)=> e.stopPropagation()} 
+          style={{height: '100%', cursor: 'auto'}}>
             <div className={s.amountBlock}>
               {
                 el.amount > 1 
@@ -60,9 +56,7 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
                   setBasket([...basket])
                 }} disabled style={{cursor: 'not-allowed'}}>-</button>
               }
-              
               <span className={s.amount}>{el.amount}</span>
-
               {
                  el.amount < 10 
                  ? <button onClick={(e)=> {
@@ -76,14 +70,12 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
                   setBasket([...basket])
                 }} disabled style={{cursor: 'not-allowed'}}>+</button>
               }
-             
             </div>
             {
               currency === 'BYN'
               ?  <span>{(el.price * el.amount*2.5).toFixed(2)} Br</span>
               :  <span>{(el.price * el.amount).toFixed(2)} $</span>
             }
-           
             <button className='btn remove' onClick={clickBasketHandler} style={{marginTop: 0}}
               data-id={el.id} >Удалить</button>
           </div>

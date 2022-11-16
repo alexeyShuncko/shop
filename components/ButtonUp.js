@@ -9,5 +9,4 @@ const clickUpScroll =()=> {
     return (
        <button className={s.btn} onClick={clickUpScroll}><span></span></button>  
     )
-
 }

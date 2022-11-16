@@ -7,7 +7,6 @@
   --normal: #7c7cf8;
 }
 
-
 html,
 body {
   padding: 0;
@@ -26,7 +25,6 @@ a {
   margin: 0;
 }
 
-
 .btn {
   display: inline-block;
   font-size: 1em;
@@ -35,7 +33,6 @@ a {
   border: none;
   padding: 10px;
   cursor: pointer;
- 
   border-radius: 5px;
   margin-top: 10px;
   opacity: 0.9;
@@ -51,7 +48,6 @@ a {
 .btn.normal {
   background: var(--normal);
 }
-
 
 .btn.success:hover {
   opacity: 1;
@@ -78,7 +74,6 @@ a {
 .btn.normal:active {
   box-shadow: 0 0 15px var(--normal), 0 0 35px var(--normal), 0 0 75px var(--normal);
 }
-
 
 select {
   outline: none;

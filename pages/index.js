@@ -14,7 +14,6 @@ export default function Catalog(
   const [products, setProducts] = useState(data)
   const [value, setValue] = useState('')
   
-
   const router = useRouter()
 
   const clickBasketHandler = (e) => {
@@ -102,6 +101,7 @@ export default function Catalog(
         <div >
           <input placeholder='Поиск ...' value={value} onChange={searchChangeHandler}></input>
         </div>
+        <div className={s.filterGroupItem}>
         <div className={s.filterItem}>
         <span>Сортировка цены: </span>
           <select value={sort} onChange={sortingChangeHandler}>
@@ -120,6 +120,7 @@ export default function Catalog(
             <option>{`women's clothing`}</option>
           </select>
         </div>
+        </div> 
       </div>
       <div className={s.catalog}>
         {products.length !== 0
@@ -136,10 +137,6 @@ export default function Catalog(
                   priority
                   style={{ width: 'auto', height: 'auto' }} />
               </div>
-
-            
-
-
               <div style={{ marginTop: '20px' }}>
               {
                 currency === 'BYN'
@@ -160,15 +157,12 @@ export default function Catalog(
               </div>
             </div>
           ))
-
           : <div>Ничего не найдено ...</div>
         }
       </div>
-
     </div>
   )
 }
-
 
 Catalog.getInitialProps = async ({ req }) => {
   if (!req) {

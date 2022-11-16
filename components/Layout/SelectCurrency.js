@@ -1,8 +1,6 @@
 
 
-
 export const SelectCurrency = ({currency, setCurrency, setVisibl, setText}) => {
-
 
     const changeCurrencyHandler =(e)=> {
         const body = document.querySelector('body')

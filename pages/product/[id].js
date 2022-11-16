@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { Loading } from "../../components/Loading";
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
+import { Loading } from '../../components/Loading'
 import s from '../../styles/Product.module.css'
 
 export default function Product(
@@ -52,13 +52,15 @@ export default function Product(
     <>
       <div className={s.title}>{data.title}</div>
       <div className={s.content}>
-        <Image src={data.image} width={200} height={250} alt='' priority style={{ width: 'auto', height: 'auto' }} />
+        <Image src={data.image} width={200} height={250} alt='Товар' priority 
+        style={{ width: 'auto', height: 'auto' }} />
         <div>
           <div className={s.description}>{data.description}</div>
           <div className={s.blockList}>
           <div className={s.list}>
             <span>Категория:</span>
-            <span className={s.bold} style={{cursor: 'pointer'}}onClick={categoryClickHandler}>{data.category}</span>
+            <span className={s.bold} style={{cursor: 'pointer'}}onClick={categoryClickHandler}>
+              {data.category}</span>
             </div>
           <div className={s.list}><span>Рейтинг:</span>
           <span className={s.rating} style={{'--rating': data.rating.rate}} 

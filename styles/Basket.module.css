@@ -24,7 +24,6 @@
     width: 100%;
 }
 
-
 .title {
     font-size: 1.2em;
     width: 100%; 
@@ -46,13 +45,11 @@
     font-size: 1.2em;
 }
 
-
 .amountBlock {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .price .amountBlock button {
     position: relative;
@@ -73,14 +70,12 @@
 }
 
 .price .amountBlock button:enabled:active {
-    
     box-shadow: 0 0 10px #ccc,
         0 0 30px #ccc,
         0 0 70px #ccc,
         0 0 150px #ccc;
     opacity: 1;
 }
-
 
 .price span {
     font-size: 1.3em;
@@ -106,14 +101,12 @@
     font-size: 1.5em;
 }
 
-
 @media (max-width: 800px) {
     .product {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
-    
 }
 
 @media (max-width: 460px) {

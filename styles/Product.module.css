@@ -23,6 +23,7 @@
     align-items: center;
     width: 300px;
 }
+
 .blockBtn {
     display: flex;
     justify-content: flex-end;
@@ -34,8 +35,6 @@
     font-size: 1.3em;
     letter-spacing: 1px;
 }
-
-
 
 .rating {
     position: relative;
@@ -55,7 +54,6 @@
     -webkit-text-fill-color: transparent;
 }
 
-
 .rating:hover::after {
     content: attr(aria-label);
     position: absolute;
@@ -64,7 +62,6 @@
     font-size: 14px;
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
 }
-
 
 @media (max-width: 900px) {
     .content {

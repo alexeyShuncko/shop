@@ -15,12 +15,9 @@ export const MyModal = ({ text, visibl, setVisibl }) => {
 
     return (
         <>
-            {
-                visibl &&
+            {visibl &&
                 <div className={s.modal} id='modal' style={{background: color}}>
                     <span> {text}</span>
-                    {/* <button className='btn' onClick={() => setVisibl(false)}
-                        style={{ '--clr': '#2ECC71' }} >Ок ...</button> */}
                 </div>
             }
         </>

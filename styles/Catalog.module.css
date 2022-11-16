@@ -2,14 +2,12 @@
     position: relative;
 }
 
-
 .catalog {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     grid-gap: 20px;
 }
-
 
 .card {
     display: flex;
@@ -21,7 +19,6 @@
     border-radius: 10px;
     cursor: pointer;
     max-width: 300px;
-  
     transition: 0.5s;
 }
 
@@ -30,7 +27,6 @@
     0px 5px 15px #2ECC71;
     transform: translateY(-5px);
 }
-
 
 .title {
     margin-bottom: 10px;
@@ -44,6 +40,11 @@
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+}
+
+.filterGroupItem {
+    display: flex;
+    gap: 20px;
 }
 
 .filter input,
@@ -61,29 +62,24 @@
     border: 1px solid #6b6c77;
 }
 
-
-
 @media (max-width: 900px) {
-    .catalog {
-        
+    .catalog {   
         grid-template-columns: 300px 300px;
     }
     .filter {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
-
 }
 
 @media (max-width: 660px) {
     .catalog {
-        
         grid-template-columns: 300px;
     }
-    /* .filterItem {
-        display: flex;
+    .filterGroupItem {
+        flex-direction: column-reverse;
         align-items: flex-start;
-        flex-direction: column;
-    } */
+        gap: 10px;
+    }
 }

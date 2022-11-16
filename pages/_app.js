@@ -1,10 +1,8 @@
 import '../styles/globals.css'
-import { useState } from "react";
-import { MainLayout } from '../components/Layout/MainLayout';
+import { useState } from 'react'
+import { MainLayout } from '../components/Layout/MainLayout'
 
 function MyApp({ Component, pageProps }) {
-
-  
 
   const [scroll, setScroll] = useState(0)
 
@@ -31,7 +29,6 @@ function MyApp({ Component, pageProps }) {
       />
     </MainLayout>
   )
-
 }
 
 export default MyApp

@@ -1,14 +1,11 @@
-import Head from "next/head"
-import Link from "next/link"
+import Head from 'next/head'
 import s from '../../styles/Layout.module.css'
 import { useRouter } from 'next/router'
-import { useEffect } from "react";
-import { MyModal } from "../MyModal";
-import { SelectCurrency } from "./SelectCurrency";
-import { Footer } from "./Footer";
-import { ButtonUp } from "../ButtonUp";
-import Image from "next/image"
-import basketLogo from '../../public/basket.png';
+import { useEffect } from 'react'
+import { MyModal } from '../MyModal'
+import { Footer } from './Footer'
+import { ButtonUp } from '../ButtonUp'
+import { Navigation } from './Navigation'
 
 
 
@@ -37,39 +34,16 @@ export const MainLayout = (
       },[setScroll])
 
    
-
     return (
         <>
-            <Head>
-                <title>Shop</title>
-            </Head>
-            <nav className={s.navigation} >
-                <div>
-                <SelectCurrency 
-                currency={currency} setCurrency={setCurrency} 
-                setText={setText} setVisibl={setVisibl}/>
-                <Link href={'/'} className={s.active}>Каталог</Link>
-                </div>
-                <span className={s.nameShop}>Интернет-магазин</span>  
-                
-                <Link href={'/basket'} >
-                    <div className={s.basket}>
-                    { basket.length !==0 && <span className={s.count}>
-                        {basket.map(el => el.amount).reduce((acc, sum)=> acc + sum, 0)}</span> }
-                    Корзина 
-                    <Image src={basketLogo} alt='Корзина' width={30} height={30}/> 
-                    </div>
-                   </Link>
-            </nav>
-            <main className={s.container}>
-               {children}
-            </main>
-          <Footer category={category} setCategory={setCategory}/>
+            <Head><title>Shop</title></Head>
+            <Navigation  
+            currency={currency} setCurrency={setCurrency} 
+            setText={setText} setVisibl={setVisibl} basket={basket}/>
+            <main className={s.container}>{children}</main>
+            <Footer category={category} setCategory={setCategory}/>
             <MyModal text={text} setVisibl={setVisibl} visibl={visibl} />
-            {
-                scroll > 450 &&   <ButtonUp />
-            }
-          
+            {scroll > 450 &&   <ButtonUp />}
         </>
     )
 }
