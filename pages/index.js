@@ -13,7 +13,7 @@ export default function Catalog(
   const [data, setData] = useState(serverData)
   const [products, setProducts] = useState(data)
   const [value, setValue] = useState('')
-  
+
   const router = useRouter()
 
   const clickBasketHandler = (e) => {
@@ -49,14 +49,26 @@ export default function Catalog(
     setSort(e.target.value)
   }
 
-  const sortingHelper =(arr=[], option)=> {
-    if (option ==='по возрастанию') {
-      return arr.sort((a,b)=> a.price - b.price)
+  const clickSelect =(e)=> {
+    const el = document.getElementById('arrow')
+    el.classList.toggle(s.active)
+  }
+  const blurHandler =(e)=> {
+  const el = document.getElementById('arrow')
+  if (el.classList.contains(s.active)) {
+    el.classList.remove(s.active)
+  }
+  
+  }
+
+  const sortingHelper = (arr = [], option) => {
+    if (option === 'по возрастанию') {
+      return arr.sort((a, b) => a.price - b.price)
     }
-    else if (option ==='по убыванию') {
-      return arr.sort((a,b)=> b.price - a.price)
+    else if (option === 'по убыванию') {
+      return arr.sort((a, b) => b.price - a.price)
     }
-    else return arr.sort((a,b)=> a.id - b.id)
+    else return arr.sort((a, b) => a.id - b.id)
   }
 
   useEffect(() => {
@@ -76,12 +88,12 @@ export default function Catalog(
     if (category === 'all' && data) {
       setProducts(
         sortingHelper(data.filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort)
-       )
+      )
     }
     else
       setProducts(data && sortingHelper(data
-      .filter(el => el.category === category)
-      .filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort))
+        .filter(el => el.category === category)
+        .filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort))
 
   }, [category, data, value, sort])
 
@@ -102,25 +114,26 @@ export default function Catalog(
           <input placeholder='Поиск ...' value={value} onChange={searchChangeHandler}></input>
         </div>
         <div className={s.filterGroupItem}>
-        <div className={s.filterItem}>
-        <span>Сортировка цены: </span>
-          <select value={sort} onChange={sortingChangeHandler}>
-            <option>без сортировки</option>  
-            <option>по возрастанию</option>
-            <option>по убыванию</option>
-          </select>
+          <div className={s.filterItem}>
+            <span>Сортировка цены: </span>
+            <select value={sort} onChange={sortingChangeHandler} onClick={clickSelect} onBlur={blurHandler}>
+              <option>без сортировки</option>
+              <option>по возрастанию</option>
+              <option>по убыванию</option>
+            </select>
+            <span className={s.arrow} id='arrow'></span>
+          </div>
+          <div className={s.filterItem}>
+            <span>Категория: </span>
+            <select value={category} onChange={categoryChangeHandler}>
+              <option>all</option>
+              <option>{`men's clothing`}</option>
+              <option>jewelery</option>
+              <option>electronics</option>
+              <option>{`women's clothing`}</option>
+            </select>
+          </div>
         </div>
-        <div className={s.filterItem}>
-          <span>Категория: </span>
-          <select value={category} onChange={categoryChangeHandler}>
-            <option>all</option>
-            <option>{`men's clothing`}</option>
-            <option>jewelery</option>
-            <option>electronics</option>
-            <option>{`women's clothing`}</option>
-          </select>
-        </div>
-        </div> 
       </div>
       <div className={s.catalog}>
         {products.length !== 0
@@ -128,7 +141,7 @@ export default function Catalog(
           ? products.map(el => (
             <div key={el.title} className={s.card} onClick={() => router.push(`./product/${el.id}`)}>
               <div className={s.title}>{el.title}</div>
-              <div style={{  height: '221px', display: 'flex', alignItems:'center', justifyContent: 'center' }} >
+              <div style={{ height: '221px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                 <Image
                   src={`${el.image}`}
                   alt=''
@@ -138,11 +151,11 @@ export default function Catalog(
                   style={{ width: 'auto', height: 'auto' }} />
               </div>
               <div style={{ marginTop: '20px' }}>
-              {
-                currency === 'BYN'
-                  ? <div className={s.price}>{(el.price * 2.5).toFixed(2)} Br</div>
-                  : <div className={s.price}>{el.price.toFixed(2)} $</div>
-              }
+                {
+                  currency === 'BYN'
+                    ? <div className={s.price}>{(el.price * 2.5).toFixed(2)} Br</div>
+                    : <div className={s.price}>{el.price.toFixed(2)} $</div>
+                }
                 {
                   basket.find(a => a.id === el.id)
                     ? <button

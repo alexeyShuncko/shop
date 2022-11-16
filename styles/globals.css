@@ -78,8 +78,9 @@ a {
 select {
   outline: none;
   cursor: pointer;
-  padding: 5px 0;
+  padding: 5px;
   border-radius: 5px;
+  appearance: none;
 }
 
 input {

@@ -41,6 +41,9 @@
     justify-content: space-between;
     margin: 20px 0;
 }
+.filterItem {
+    position: relative;
+}
 
 .filterGroupItem {
     display: flex;
@@ -49,7 +52,7 @@
 
 .filter input,
 .filter select {
-    padding: 10px;
+    padding: 10px 25px 10px 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
@@ -61,6 +64,26 @@
     box-shadow: 0 5px 10px #ccc;
     border: 1px solid #6b6c77;
 }
+
+.arrow {
+    position: absolute;
+    top: 11px;
+    right: 8px;
+    height: 10px;
+    width: 10px;
+    border-bottom: 3px solid #ccc;
+    border-left: 3px solid #ccc;
+    pointer-events: none;
+    transform: rotate(-45deg);
+    transition: 0.1s;
+}
+
+.arrow.active {
+    top: 16px;
+    transform: rotate(135deg);
+}
+
+
 
 @media (max-width: 900px) {
     .catalog {   
