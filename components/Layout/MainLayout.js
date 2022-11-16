@@ -50,10 +50,12 @@ export const MainLayout = (
                 setText={setText} setVisibl={setVisibl}/>
                 <Link href={'/'} className={s.active}>Каталог</Link>
                 </div>
-                <span className={s.nameShop}>Интернет-магазин</span>
+                <span className={s.nameShop}>Интернет-магазин</span>  
+                
                 <Link href={'/basket'} >
                     <div className={s.basket}>
-                    { basket.length !==0 && <span className={s.count}>{basket.length}</span> }
+                    { basket.length !==0 && <span className={s.count}>
+                        {basket.map(el => el.amount).reduce((acc, sum)=> acc + sum, 0)}</span> }
                     Корзина 
                     <Image src={basketLogo} alt='Корзина' width={30} height={30}/> 
                     </div>

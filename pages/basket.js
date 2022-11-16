@@ -101,7 +101,7 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
       </div>
       <div>
         <Link className='btn normal'  href={'/'}>За покупками!</Link>
-        <Link className='btn success'  href={'/payment'}>К оплате.</Link>
+        <Link className='btn success'  href={'/payment'} style={{ marginLeft: '10px' }}>К оплате</Link>
       </div>
     </>
   )

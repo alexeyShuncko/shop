@@ -127,24 +127,25 @@ export default function Catalog(
           ? products.map(el => (
             <div key={el.title} className={s.card} onClick={() => router.push(`./product/${el.id}`)}>
               <div className={s.title}>{el.title}</div>
-              <div>
+              <div style={{  height: '221px', display: 'flex', alignItems:'center', justifyContent: 'center' }} >
                 <Image
                   src={`${el.image}`}
                   alt=''
                   width={100}
-                  height={130}
+                  height={100}
                   priority
                   style={{ width: 'auto', height: 'auto' }} />
               </div>
 
-              {
-                currency === 'BYN'
-                  ? <div className={s.price}>{(el.price * 2.5).toFixed(2)} Br</div>
-                  : <div className={s.price}>{el.price} $</div>
-              }
+            
 
 
               <div style={{ marginTop: '20px' }}>
+              {
+                currency === 'BYN'
+                  ? <div className={s.price}>{(el.price * 2.5).toFixed(2)} Br</div>
+                  : <div className={s.price}>{el.price.toFixed(2)} $</div>
+              }
                 {
                   basket.find(a => a.id === el.id)
                     ? <button

@@ -21,7 +21,7 @@
 .navigation a.active {
     font-size: 1.2em;
     font-weight: 500;
-    text-shadow: 3px -3px 10px;
+    text-shadow: 0px -3px 20px, 0px 3px 20px;
     transition: 0.2s;
 }
 
@@ -29,7 +29,17 @@
     min-height: 33vh;
 }
 
+
 .nameShop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 60px;
+    pointer-events: none;
     font-size: 1.4em;
     letter-spacing: 1px;
 }
@@ -37,9 +47,18 @@
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 70px auto;
     text-align: center;
-    max-width: 900px;
+    max-width: 940px;
+    padding: 0 10px ;
+}
+
+@media (max-width: 900px) {
+    .container{
+        margin: 70px auto;
+    } 
 }
 .basket {
     position: relative;
@@ -85,7 +104,7 @@
     align-items: center;
     justify-content: space-around;
     background: #ccc;
-    height: 300px;
+    min-height: 300px;
     box-shadow: 0 -3px 30px rgba(0, 0, 0, 0.2);
     padding: 30px;
 }
@@ -96,6 +115,7 @@
 }
 
 .footer div:nth-child(2) {
+    text-align: center;
     font-size: 0.8em;
 }
 
@@ -104,14 +124,31 @@
     margin-bottom: 15px;
     font-weight: 600;
     font-size: 1.2em;
+   
 }
 
 .footer li {
-    padding-left: 30px;
+    padding-left: 0px;
     padding-bottom: 10px;
     cursor: pointer;
 }
 
 .footer li:hover {
     font-weight: 600;
+}
+
+
+
+@media (max-width: 660px) {
+    .nameShop {
+        display: none;
+    }
+}
+
+@media (max-width: 460px) {
+    .footer div:nth-child(1) {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
 }

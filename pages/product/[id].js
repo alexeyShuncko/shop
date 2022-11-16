@@ -67,10 +67,10 @@ export default function Product(
           {
             currency === 'BYN'
             ? <span className={s.bold}>{(data.price*2.5).toFixed(2)} Br</span>
-            : <span className={s.bold}>{data.price} $</span>
+            : <span className={s.bold}>{data.price.toFixed(2)} $</span>
           }
           </div>
-          <div style={{ marginTop: '20px' }}>
+          <div className={s.blockBtn}>
             {
               basket.find(a => a.id === data.id)
                 ? <button className='btn remove' onClick={clickBasketHandler}
@@ -78,7 +78,7 @@ export default function Product(
                 : <button className='btn success' onClick={clickBasketHandler}
                   data-id={data.id} >Добавить</button>
             }
-            <Link href={'/'} className='btn normal'>В каталог</Link>
+            <Link href={'/'} className='btn normal'  style={{ marginLeft: '10px' }}>В каталог</Link>
           </div>
         </div>
       </div>

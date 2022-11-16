@@ -6,7 +6,8 @@
 .catalog {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    justify-content: center;
+    grid-gap: 20px;
 }
 
 
@@ -19,6 +20,8 @@
     box-shadow: 0 5px 10px #ccc;
     border-radius: 10px;
     cursor: pointer;
+    max-width: 300px;
+  
     transition: 0.5s;
 }
 
@@ -58,3 +61,22 @@
     border: 1px solid #6b6c77;
 }
 
+@media (max-width: 900px) {
+    .catalog {
+        
+        grid-template-columns: 300px 300px;
+    }
+    .filter {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 660px) {
+    .catalog {
+        
+        grid-template-columns: 300px;
+    }
+}

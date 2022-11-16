@@ -37,7 +37,7 @@ a {
   cursor: pointer;
  
   border-radius: 5px;
-  margin-left: 10px;
+  margin-top: 10px;
   opacity: 0.9;
   transition: 0.25s;
 }
@@ -83,7 +83,7 @@ a {
 select {
   outline: none;
   cursor: pointer;
-  padding: 5px;
+  padding: 5px 0;
   border-radius: 5px;
 }
 

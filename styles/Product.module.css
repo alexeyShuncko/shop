@@ -3,6 +3,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 .content {
@@ -12,6 +13,7 @@
 }
 
 .description {
+    text-align: left;
     margin-bottom: 30px;
 }
 
@@ -19,6 +21,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 300px;
+}
+.blockBtn {
+    display: flex;
+    justify-content: flex-end;
     max-width: 300px;
 }
 
