@@ -89,9 +89,10 @@
         border: 1px solid var(--success);
         box-shadow: 0 3px 10px var(--success);
     }
+    .mySelect:focus .arrow,
     .mySelect:hover .arrow{
-        border-bottom: 3px solid #ccc;
-        border-left: 3px solid #ccc;
+        border-bottom: 3px solid var(--success);
+        border-left: 3px solid var(--success);
     }
     .mySelect ul li:hover {
         background: none;

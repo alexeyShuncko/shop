@@ -75,8 +75,11 @@
 }
 
 @media (max-width: 460px) {
+    .rating:hover {
+        margin-bottom: 10px;
+    }
     .rating:hover::after {
-        top: 5px;
-        right: 0;
+       top: 35px;
+       left: -220px;
     }
 }

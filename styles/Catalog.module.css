@@ -80,7 +80,7 @@
         gap: 10px;
     }
     .card:hover {
-        box-shadow: none;
+        box-shadow: 0 5px 10px #ccc;
         transform: none;
     }
 }
