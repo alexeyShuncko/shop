@@ -83,10 +83,9 @@
 
 
 @media (max-width: 800px) {
+    
+    .mySelect:focus,
     .mySelect:hover {
-        border: none;
-    }
-    .mySelect:focus {
         border: 1px solid var(--success);
         box-shadow: 0 3px 10px var(--success);
     }
