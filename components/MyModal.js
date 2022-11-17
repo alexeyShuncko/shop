@@ -3,12 +3,17 @@ import s from '../styles/MyModal.module.css'
 
 export const MyModal = ({ text, visibl, setVisibl }) => {
 
+  
+
     if (visibl) {
+        
         setTimeout(() => {
+           
             setVisibl(false)
             const body = document.querySelector('body')
             body.style.pointerEvents ='auto'
-        }, 1200)
+            body.style.touchAction = 'auto'
+        }, 1300)
     }
 
     let color = text.includes('удалён') ? '#e26868' :'#2ECC71'
