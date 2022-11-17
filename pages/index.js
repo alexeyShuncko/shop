@@ -3,6 +3,7 @@ import s from '../styles/Catalog.module.css'
 import { useState, useEffect, useLayoutEffect } from 'react'
 import { Loading } from '../components/Loading'
 import { useRouter } from 'next/router'
+import { MySelect } from '../components/MySelect'
 
 
 
@@ -37,29 +38,10 @@ export default function Catalog(
     }
   }
 
-  const categoryChangeHandler = (e) => {
-    setCategory(e.target.value);
-  }
-
   const searchChangeHandler = (e) => {
     setValue(e.target.value)
   }
 
-  const sortingChangeHandler = (e) => {
-    setSort(e.target.value)
-  }
-
-  const clickSelect =(e)=> {
-    const el = document.getElementById('arrow')
-    el.classList.toggle(s.active)
-  }
-  const blurHandler =(e)=> {
-  const el = document.getElementById('arrow')
-  if (el.classList.contains(s.active)) {
-    el.classList.remove(s.active)
-  }
-  
-  }
 
   const sortingHelper = (arr = [], option) => {
     if (option === 'по возрастанию') {
@@ -116,22 +98,13 @@ export default function Catalog(
         <div className={s.filterGroupItem}>
           <div className={s.filterItem}>
             <span>Сортировка цены: </span>
-            <select value={sort} onChange={sortingChangeHandler} onClick={clickSelect} onBlur={blurHandler}>
-              <option>без сортировки</option>
-              <option>по возрастанию</option>
-              <option>по убыванию</option>
-            </select>
-            <span className={s.arrow} id='arrow'></span>
+            <MySelect value={sort} setValue={setSort}
+              dataList={['по возрастанию', 'по убыванию', 'без сортировки']} />
           </div>
           <div className={s.filterItem}>
             <span>Категория: </span>
-            <select value={category} onChange={categoryChangeHandler}>
-              <option>all</option>
-              <option>{`men's clothing`}</option>
-              <option>jewelery</option>
-              <option>electronics</option>
-              <option>{`women's clothing`}</option>
-            </select>
+            <MySelect value={category} setValue={setCategory}
+              dataList={['all', `men's clothing`, 'jewelery', 'electronics', `women's clothing`]} />
           </div>
         </div>
       </div>

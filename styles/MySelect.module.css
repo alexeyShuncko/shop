@@ -1,0 +1,85 @@
+.mySelect {
+    position: relative;
+    padding: 10px 25px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 160px;
+    box-shadow: 0 3px 10px #ccc;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    font-size: 1em;
+    text-align: left;
+    transition: 0.25s;
+}
+
+.mySelect:hover {
+    border: 1px solid var(--success);
+}
+.mySelect:focus {
+    border: 1px solid var(--success);
+    box-shadow: 0 3px 10px var(--success);
+}
+
+
+.mySelect:hover .arrow,
+.mySelect:focus .arrow {
+    border-bottom: 3px solid var(--success);
+    border-left: 3px solid var(--success);
+}
+
+
+.mySelect ul {
+    display: block;
+    position: absolute;
+    top: 37px;
+    left: -1px;
+    background: #fff;
+    border: 1px solid var(--success);
+    width: 160px;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0 3px 10px var(--success);
+    z-index: 10;
+    animation: visibl 0.5s;
+}
+
+@keyframes visibl {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.mySelect ul li {
+    list-style: none;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    transition: 0.25s;
+}
+
+.mySelect ul li:hover {
+    background: #ccc;
+}
+
+.arrow {
+    position: absolute;
+    top: 11px;
+    right: 8px;
+    height: 10px;
+    width: 10px;
+    border-bottom: 3px solid #ccc;
+    border-left: 3px solid #ccc;
+    pointer-events: none;
+    transform: rotate(-45deg);
+    transition: 0.25s;
+}
+
+.arrow.active {
+    top: 16px;
+    transform: rotate(135deg);
+}

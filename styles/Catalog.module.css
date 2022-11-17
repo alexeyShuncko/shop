@@ -43,6 +43,9 @@
 }
 .filterItem {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .filterGroupItem {
@@ -50,39 +53,21 @@
     gap: 20px;
 }
 
-.filter input,
-.filter select {
+.filter input {
     padding: 10px 25px 10px 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    box-shadow: 0 3px 10px #ccc;
     font-size: 16px;
-    transition: 0.5s;
+    transition: 0.25s;
 }
-
-.filter input:focus,
-.filter select:focus {
-    box-shadow: 0 5px 10px #ccc;
-    border: 1px solid #6b6c77;
+.filter input:hover {
+    border: 1px solid var(--success);
 }
-
-.arrow {
-    position: absolute;
-    top: 11px;
-    right: 8px;
-    height: 10px;
-    width: 10px;
-    border-bottom: 3px solid #ccc;
-    border-left: 3px solid #ccc;
-    pointer-events: none;
-    transform: rotate(-45deg);
-    transition: 0.1s;
+.filter input:focus {
+    border: 1px solid var(--success);
+    box-shadow: 0 3px 10px var(--success);
 }
-
-.arrow.active {
-    top: 16px;
-    transform: rotate(135deg);
-}
-
 
 
 @media (max-width: 900px) {
