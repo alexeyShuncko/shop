@@ -14,7 +14,11 @@
 }
 
 .navigation a {
-    margin-left: 20px;
+    margin-left: 10px;
+}
+.catalogLink {
+    display: flex;
+    align-items: center;
 }
 
 .navigation a.active {
@@ -55,6 +59,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .count {
