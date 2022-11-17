@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { SelectCurrency } from './SelectCurrency'
 import basketLogo from '../../public/basket.png'
 import s from '../../styles/Layout.module.css'
+import { MySelect } from '../MySelect'
 
 
 
@@ -10,9 +11,8 @@ export const Navigation =({currency,setCurrency,setText,setVisibl,basket })=> {
     return (
         <nav className={s.navigation} >
                 <div>
-                <SelectCurrency 
-                currency={currency} setCurrency={setCurrency} 
-                setText={setText} setVisibl={setVisibl}/>
+                    <MySelect value={currency} setValue={setCurrency} 
+                    setText={setText} setVisibl={setVisibl} dataList={['USD', 'BYN']} size={'small'}/>
                 <Link href={'/'} className={s.active}>Каталог</Link>
                 </div>
                 <span className={s.nameShop}>Интернет-магазин</span>  

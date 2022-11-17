@@ -3,9 +3,11 @@ import s from '../styles/MySelect.module.css'
 
 
 
-export const MySelect = ({ value='без сортировки', setValue, dataList }) => {
+export const MySelect = ({ value, setValue, dataList, setVisibl, setText, size }) => {
 
     const [open, setOpen] = useState(false)
+
+    const width = size === 'small' ? '71px': '160px'
 
 
     const clickHandlerSelect = (e) => {
@@ -15,6 +17,10 @@ export const MySelect = ({ value='без сортировки', setValue, dataLi
         if (e.target.localName === 'li') {
             setOpen(!open)
             setValue(e.target.innerHTML)
+            if (setText) {
+                setText('Валюта изменена!')
+                setVisibl(true)
+            }
             e.currentTarget.lastChild.classList.remove(s.active)
         }
     }
@@ -24,19 +30,14 @@ export const MySelect = ({ value='без сортировки', setValue, dataLi
         e.currentTarget.lastChild.classList.remove(s.active)
     }
 
-
     return (
         <button 
+        style={{width: width}}
         className={s.mySelect} 
         onClick={clickHandlerSelect} 
         onBlur={blurHandlerSelect}>
             <span>{value}</span>
-            {
-                open &&
-                <ul>
-                    {dataList.map(option => <li key={option}>{option}</li>)}
-                </ul>
-            }
+            {open && <ul  style={{width: width}}>{dataList.map(option => <li key={option}>{option}</li>)}</ul>}
             <span className={s.arrow}></span>
         </button>
     )

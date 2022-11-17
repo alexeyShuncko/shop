@@ -3,10 +3,9 @@
     padding: 10px 25px 10px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 160px;
-    box-shadow: 0 3px 10px #ccc;
+    box-shadow: 0 2px 5px #ccc;
     cursor: pointer;
-    background: none;
+    background: #fff;
     outline: none;
     font-size: 1em;
     text-align: left;
@@ -36,9 +35,8 @@
     left: -1px;
     background: #fff;
     border: 1px solid var(--success);
-    width: 160px;
     border-radius: 0px 0px 5px 5px;
-    box-shadow: 0 3px 10px var(--success);
+    box-shadow: 0 2px 5px var(--success);
     z-index: 10;
     animation: visibl 0.5s;
 }
