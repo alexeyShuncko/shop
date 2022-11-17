@@ -14,18 +14,18 @@ function MyApp({ Component, pageProps }) {
   const [sort, setSort] = useState('без сортировки')
 
   return (
-    <MainLayout basket={basket} 
-    visibl={visibl} setVisibl={setVisibl} 
-    text={text} setText={setText}
-    currency={currency} setCurrency={setCurrency}
-    category={category} setCategory={setCategory} 
-    scroll={scroll} setScroll={setScroll}>
-      <Component {...pageProps}  
-      basket={basket} setBasket={setBasket} 
+    <MainLayout basket={basket}
       visibl={visibl} setVisibl={setVisibl}
-      text={text} setText={setText} currency={currency} 
+      text={text} setText={setText}
+      currency={currency} setCurrency={setCurrency}
       category={category} setCategory={setCategory}
-      sort={sort} setSort={setSort}
+      scroll={scroll} setScroll={setScroll}>
+      <Component {...pageProps}
+        basket={basket} setBasket={setBasket}
+        visibl={visibl} setVisibl={setVisibl}
+        text={text} setText={setText} currency={currency}
+        category={category} setCategory={setCategory}
+        sort={sort} setSort={setSort}
       />
     </MainLayout>
   )

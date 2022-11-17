@@ -2,11 +2,7 @@ import s from '../../styles/Layout.module.css'
 import { useRouter } from 'next/router'
 
 
-
-
-
 export const Footer = ({category, setCategory}) => {
-
 
     const router = useRouter()
 
@@ -17,8 +13,7 @@ export const Footer = ({category, setCategory}) => {
             if (e.target.localName === 'li') {
                 setCategory(e.target.innerHTML)
                 window.scroll(0,0)  
-            } 
-        
+            }   
     }
 
     return (
@@ -42,5 +37,4 @@ export const Footer = ({category, setCategory}) => {
             </div>
         </div>
     )
-
 }

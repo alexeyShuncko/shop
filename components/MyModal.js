@@ -8,7 +8,7 @@ export const MyModal = ({ text, visibl, setVisibl }) => {
             setVisibl(false)
             const body = document.querySelector('body')
             body.style.pointerEvents ='auto'
-        }, 1200);
+        }, 1200)
     }
 
     let color = text.includes('удалён') ? '#e26868' :'#2ECC71'

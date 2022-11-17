@@ -75,14 +75,6 @@ a {
   box-shadow: 0 0 15px var(--normal), 0 0 35px var(--normal), 0 0 75px var(--normal);
 }
 
-select {
-  outline: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
-  appearance: none;
-}
-
 input {
   outline: none;
 }
