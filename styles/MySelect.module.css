@@ -82,4 +82,19 @@
 }
 
 
- 
+@media (max-width: 800px) {
+    .mySelect:hover {
+        border: none;
+    }
+    .mySelect:focus {
+        border: 1px solid var(--success);
+        box-shadow: 0 3px 10px var(--success);
+    }
+    .mySelect:hover .arrow{
+        border-bottom: 3px solid #ccc;
+        border-left: 3px solid #ccc;
+    }
+    .mySelect ul li:hover {
+        background: none;
+    }
+}

@@ -67,7 +67,6 @@
 
 .price .amountBlock button:enabled:hover {
     background: #ccc;
-    border-radius: 50%;
 }
 .price .amountBlock span {
     margin: 0 5px;
@@ -115,6 +114,7 @@
         background: none;
     }
     .price .amountBlock button:enabled:active {
+        background: #ccc;
         box-shadow: 0 0 10px #ccc,
             0 0 30px #ccc,
             0 0 70px #ccc,
