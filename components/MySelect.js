@@ -6,7 +6,7 @@ import s from '../styles/MySelect.module.css'
 export const MySelect = ({ value, setValue, dataList, setVisibl, setText, size }) => {
 
     const [open, setOpen] = useState(false)
-    const width = size === 'small' ? '71px' : '160px'
+    const width = size === 'small' ? '71px' : '170px'
 
     const clickHandlerSelect = (e) => {
         e.stopPropagation()

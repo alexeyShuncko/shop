@@ -79,6 +79,10 @@
         align-items: flex-start;
         gap: 10px;
     }
+    .card:hover {
+        box-shadow: none;
+        transform: none;
+    }
 }
 
 @media (max-width: 660px) {

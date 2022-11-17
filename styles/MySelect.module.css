@@ -37,7 +37,7 @@
     border-radius: 0px 0px 5px 5px;
     box-shadow: 0 2px 5px var(--success);
     z-index: 10;
-    animation: visibl 0.5s;
+    animation: visibl 0.25s;
 }
 
 @keyframes visibl {
@@ -80,3 +80,6 @@
     top: 16px;
     transform: rotate(135deg);
 }
+
+
+ 
