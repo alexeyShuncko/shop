@@ -65,19 +65,18 @@ export default function Catalog(
     }
   }, [data])
 
-  useLayoutEffect(() => {
-    if (category === 'all' && data) {
-      setProducts(
-        sortingHelper(data.filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort)
-      )
-    }
-    else
-      setProducts(data && sortingHelper(data
-        .filter(el => el.category === category)
-        .filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort))
-
-  }, [category, data, value, sort])
-
+useLayoutEffect(() => {
+      if (category === 'all' && data) {
+        setProducts(
+          sortingHelper(data.filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort)
+        )
+      }
+      else
+        setProducts(data && sortingHelper(data
+          .filter(el => el.category === category)
+          .filter(el => el.title.toLowerCase().includes(value.toLowerCase())), sort))
+  
+    }, [category, data, value, sort])
 
 
   if (!data) {
