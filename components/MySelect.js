@@ -16,8 +16,6 @@ export const MySelect = ({ value, setValue, dataList, setVisibl, setText, size }
             setOpen(!open)
             setValue(e.target.innerHTML)
             if (setText) {
-                const body = document.querySelector('body')
-                body.style.pointerEvents = 'none'
                 setText('Валюта изменена!')
                 setVisibl(true)
             }

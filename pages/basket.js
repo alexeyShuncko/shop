@@ -8,8 +8,6 @@ export default function Basket({ basket = [], setBasket, setVisibl, setText, cur
   const router = useRouter()
 
   const clickBasketHandler = (e) => {
-    const body = document.querySelector('body')
-    body.style.pointerEvents ='none'
     e.stopPropagation()
     setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
     setText('Товар удалён из корзины!')

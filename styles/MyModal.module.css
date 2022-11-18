@@ -11,21 +11,27 @@
     border: 1px solid #ccc;
     box-shadow: 0 5px 10px #ccc;
     background: #ccc;
-    animation: modal 1s;
+    font-size: 1em;
+    outline: none;
+    opacity: 0;
+    animation: modal 2s;
 }
+
 
 @keyframes modal {
     0%{
-        left: -200px;   
+        left: -200px;
     }
-    40%{
-        left: 30px;   
+    20%{
+        left: 30px;
+        opacity: 1;   
     }
-    100%{
-        left: 15px;  
+    50%{
+      left: 15px;
+      opacity: 1;  
+    }
+    100% {
+        opacity: 0;
     }
 }
 
-.modal button {
-    margin-top: 10px;
-}

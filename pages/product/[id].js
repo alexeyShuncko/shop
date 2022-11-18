@@ -29,8 +29,6 @@ export default function Product(
   }
 
   const clickBasketHandler = (e) => {
-    const body = document.querySelector('body')
-    body.style.pointerEvents = 'none'
     if (e.target.innerHTML === 'Удалить') {
       setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
       setText('Товар удалён из корзины!')

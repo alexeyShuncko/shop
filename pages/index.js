@@ -9,38 +9,31 @@ import { MySelect } from '../components/MySelect'
 
 
 export default function Catalog(
-  { data: serverData, basket, setBasket, setVisibl, setText, currency, category, setCategory, sort, setSort }) {
+  { data: serverData, basket, setBasket, setVisibl, setText, currency,
+    category, setCategory, sort, setSort }) {
 
   const [data, setData] = useState(serverData)
   const [products, setProducts] = useState(data)
   const [value, setValue] = useState('')
 
+
   const router = useRouter()
 
   const clickBasketHandler = (e) => {
+
     e.stopPropagation()
 
-    const body = document.querySelector('body')
-     body.style.pointerEvents = 'none'
-     body.style.touchAction = 'none'
-   
-
     if (e.target.innerHTML === 'Удалить') {
-      
-        setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
-     
+      setBasket(basket.filter(el => el.id !== Number(e.target.dataset.id)))
       setText('Товар удалён из корзины!')
       setVisibl(true)
     }
     else {
       const product = products.find(el => el.id === Number(e.target.dataset.id))
       product.amount = 1
-    
-        setBasket([...basket, product])
- 
+      setBasket([...basket, product])
       setText('Товар добавлен в корзину!')
       setVisibl(true)
-
     }
   }
 
