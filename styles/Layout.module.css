@@ -15,6 +15,7 @@
 
 .navigation a {
     margin-left: 10px;
+    transition: 0.25s;
 }
 .catalogLink {
     display: flex;
@@ -22,9 +23,9 @@
 }
 
 .navigation a.active {
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 500;
-    text-shadow: 0px -3px 20px, 0px 3px 20px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
     transition: 0.2s;
 }
 
@@ -64,10 +65,10 @@
 
 .count {
     position: absolute;
-    font-size: 1em;
     top: -10px;
     right: -15px;
     width: 24px;
+    font-size: 16px;
     height: 24px; 
     background: #2ECC71;
     border-radius: 50%;
@@ -75,8 +76,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fontSize 0.5s ease-in; 
+    text-shadow: none;
+    animation: fontSize 0.5s ease-in;
 }
+
 @keyframes fontSize {
     0%{
         transform: scale(2);
@@ -84,10 +87,6 @@
     100% {
         transform: scale(1);
     }
-}
-
-.navigation a.active .count {
-    font-size: 16px;
 }
 
 .footer {
