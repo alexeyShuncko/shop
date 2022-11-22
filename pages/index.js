@@ -4,6 +4,7 @@ import { useState, useEffect, useLayoutEffect } from 'react'
 import { Loading } from '../components/Loading'
 import { useRouter } from 'next/router'
 import { MySelect } from '../components/MySelect'
+import VanillaTilt from 'vanilla-tilt'
 
 
 
@@ -52,13 +53,20 @@ export default function Catalog(
     else return arr.sort((a, b) => a.id - b.id)
   }
 
+
+   useEffect(()=> {
+    const listElement = document && document.querySelectorAll(`[data-el='card']`)
+    VanillaTilt.init(listElement)
+   })
+
   useEffect(() => {
+  
     async function load() {
       const response = await fetch('https://fakestoreapi.com/products')
       const dataProducts = await response.json()
       setData(dataProducts)
       setProducts(dataProducts)
-
+     
     }
     if (!data) {
       load()
@@ -110,7 +118,8 @@ useLayoutEffect(() => {
         {products.length !== 0
 
           ? products.map(el => (
-            <div key={el.title} className={s.card} onClick={() => router.push(`./product/${el.id}`)}>
+            <div  key={el.title} data-el='card'
+            className={s.card} onClick={() => router.push(`./product/${el.id}`)}>
               <div className={s.title}>{el.title}</div>
               <div style={{ height: '221px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                 <Image
