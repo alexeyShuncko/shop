@@ -55,9 +55,12 @@ export default function Catalog(
 
 
    useEffect(()=> {
-    const listElement = document && document.querySelectorAll(`[data-el='card']`)
-    VanillaTilt.init(listElement)
-   })
+    if (document.documentElement.clientWidth > 900) {
+      
+      const listElement = document && document.querySelectorAll(`[data-el='card']`)
+      VanillaTilt.init(listElement)
+    }
+   },[products])
 
   useEffect(() => {
   
