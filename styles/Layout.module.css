@@ -17,6 +17,7 @@
     margin-left: 10px;
     transition: 0.25s;
 }
+
 .catalogLink {
     display: flex;
     align-items: center;
@@ -53,7 +54,7 @@
     margin: 70px auto;
     text-align: center;
     max-width: 940px;
-    padding: 0 20px ;
+    padding: 0 20px;
 }
 
 .basket {
@@ -69,7 +70,7 @@
     right: -15px;
     width: 24px;
     font-size: 16px;
-    height: 24px; 
+    height: 24px;
     background: #2ECC71;
     border-radius: 50%;
     line-height: 1;
@@ -81,9 +82,10 @@
 }
 
 @keyframes fontSize {
-    0%{
+    0% {
         transform: scale(2);
     }
+
     100% {
         transform: scale(1);
     }
@@ -98,8 +100,9 @@
     min-height: 300px;
     box-shadow: 0 -3px 30px rgba(0, 0, 0, 0.2);
     padding: 30px;
-  
+
 }
+
 .footer div:nth-child(1) {
     display: flex;
     justify-content: space-around;
@@ -130,12 +133,13 @@
 
 
 @media (max-width: 900px) {
-    .container{
+    .container {
         margin: 70px auto;
     }
+
     .navigation {
         padding: 30px 20px 30px 10px;
-    } 
+    }
 }
 
 @media (max-width: 660px) {

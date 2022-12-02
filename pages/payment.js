@@ -1,7 +1,3 @@
-export default function Payment () {
-    return (
-        <div>
-            Оплата
-        </div>
-    )
+export default function Payment() {
+  return <div>Оплата</div>;
 }

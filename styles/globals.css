@@ -44,9 +44,11 @@ a {
 .btn.success {
   background: var(--success);
 }
+
 .btn.remove {
   background: var(--remove);
 }
+
 .btn.normal {
   background: var(--normal);
 }
@@ -56,11 +58,13 @@ a {
   letter-spacing: 1px;
   box-shadow: 0 0 15px var(--success);
 }
+
 .btn.remove:hover {
   opacity: 1;
   letter-spacing: 1px;
   box-shadow: 0 0 15px var(--remove);
 }
+
 .btn.normal:hover {
   opacity: 1;
   letter-spacing: 1px;
@@ -70,9 +74,11 @@ a {
 .btn.success:active {
   box-shadow: 0 0 15px var(--success), 0 0 35px var(--success), 0 0 75px var(--success);
 }
+
 .btn.remove:active {
   box-shadow: 0 0 15px var(--remove), 0 0 35px var(--remove), 0 0 75px var(--remove);
 }
+
 .btn.normal:active {
   box-shadow: 0 0 15px var(--normal), 0 0 35px var(--normal), 0 0 75px var(--normal);
 }
@@ -84,24 +90,29 @@ a {
     letter-spacing: 0px;
     box-shadow: none;
   }
+
   .btn.remove:hover {
     opacity: 1;
     letter-spacing: 0px;
     box-shadow: none;
   }
+
   .btn.normal:hover {
     opacity: 1;
     letter-spacing: 0px;
     box-shadow: none;
   }
+
   .btn.success:active {
     letter-spacing: 1px;
     box-shadow: 0 0 15px var(--success), 0 0 35px var(--success), 0 0 75px var(--success);
   }
+
   .btn.remove:active {
     letter-spacing: 1px;
     box-shadow: 0 0 15px var(--remove), 0 0 35px var(--remove), 0 0 75px var(--remove);
   }
+
   .btn.normal:active {
     letter-spacing: 1px;
     box-shadow: 0 0 15px var(--normal), 0 0 35px var(--normal), 0 0 75px var(--normal);

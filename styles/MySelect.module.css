@@ -15,6 +15,7 @@
 .mySelect:hover {
     border: 1px solid var(--success);
 }
+
 .mySelect:focus {
     border: 1px solid var(--success);
     box-shadow: 0 3px 10px var(--success);
@@ -45,6 +46,7 @@
         transform: translateY(-10px);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0px);
         opacity: 1;
@@ -83,17 +85,19 @@
 
 
 @media (max-width: 800px) {
-    
+
     .mySelect:focus,
     .mySelect:hover {
         border: 1px solid var(--success);
         box-shadow: 0 3px 10px var(--success);
     }
+
     .mySelect:focus .arrow,
-    .mySelect:hover .arrow{
+    .mySelect:hover .arrow {
         border-bottom: 3px solid var(--success);
         border-left: 3px solid var(--success);
     }
+
     .mySelect ul li:hover {
         background: none;
     }

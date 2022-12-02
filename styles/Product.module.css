@@ -60,13 +60,15 @@
     top: 15px;
     right: -230px;
     font-size: 14px;
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    ;
 }
 
 @media (max-width: 900px) {
     .content {
         flex-direction: column;
     }
+
     .blockList {
         display: flex;
         flex-direction: column;
@@ -78,8 +80,9 @@
     .rating:hover {
         margin-bottom: 10px;
     }
+
     .rating:hover::after {
-       top: 35px;
-       left: -220px;
+        top: 35px;
+        left: -220px;
     }
 }
