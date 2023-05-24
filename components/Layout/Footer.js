@@ -1,8 +1,14 @@
 import s from '../../styles/Layout.module.css';
 import { useRouter } from 'next/router';
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 
 export const Footer = ({ category, setCategory }) => {
   const router = useRouter();
+
+  const defaultState = {
+    center: [53.917846, 27.589149],
+    zoom: 13,
+  };
 
   const clickCategory = (e) => {
     if (router.pathname !== '/') {
@@ -24,16 +30,29 @@ export const Footer = ({ category, setCategory }) => {
           <li>electronics</li>
           <li>{`women's clothing`}</li>
         </ul>
-        <ul>
-          {' '}
-          <span>Контакты:</span>
-          <li>+111-22-333-44-55</li>
-          <li>+111-22-333-44-55</li>
-          <li>shop@yandex.ru</li>
-          <li>г.Минск ул.Минская д.1 кв.1</li>
-        </ul>
+        <div className={s.contacts}>
+          <ul>
+            <span>Контакты:</span>
+            <li>+111-22-333-44-55</li>
+            <li>+111-22-333-44-55</li>
+            <li>shop@yandex.ru</li>
+            <li>г.Минск пр.Независимости 58</li>
+          </ul>
+          <YMaps
+            preload
+            query={{
+              apikey: '53dca892-14fc-4fba-94d9-e871421fff5e',
+              load: 'package.full',
+            }}>
+            <Map defaultState={defaultState}>
+              <Placemark geometry={[53.917846, 27.589149]} />
+            </Map>
+          </YMaps>
+        </div>
       </div>
-      <div>2022-2022© Интернет-магазин. Все права защищены.</div>
+      <div className={s.copy}>
+        2022-2023© Интернет-магазин. Все права защищены.
+      </div>
     </div>
   );
 };
