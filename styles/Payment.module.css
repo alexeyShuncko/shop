@@ -4,8 +4,18 @@
     align-items: center;
     gap: 40px;
     margin-top: 20px;
+
 }
 
+@keyframes hidden {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 .textTotal {
     font-size: 1.3em;
@@ -30,9 +40,9 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    z-index: 10;
+    animation: hidden 0.7s;
 }
-
-
 
 .bank {
     display: flex;
@@ -44,7 +54,6 @@
     display: flex;
     align-items: flex-start;
 }
-
 
 .formCard {
     position: relative;
@@ -90,7 +99,6 @@
     font-size: 1.1em;
 }
 
-
 .name {
     display: flex;
     flex-direction: column;
@@ -134,8 +142,8 @@
     box-shadow: 5px 5px 10px var(--normal);
     background-color: var(--normal);
     border: 1px solid rgb(83, 71, 190);
+    animation: hidden 0.7s;
 }
-
 
 .strip {
     margin-top: 20px;
@@ -165,8 +173,32 @@
     text-align: center;
 }
 
-
 input.error {
     border: 2px solid var(--remove);
+}
 
+
+@media (max-width: 576px) {
+    .payment {
+        gap: 20px;
+        margin-top: 0;
+    }
+
+    .card {
+        position: static;
+    }
+
+    .card1 {
+        position: static;
+    }
+
+    .btnBlock {
+        top: 275%;
+        left: 0%;
+    }
+
+    .cvc {
+        top: 160%;
+        left: 0;
+    }
 }

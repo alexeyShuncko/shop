@@ -29,7 +29,16 @@ export default function Payment({
     for (const key in data) {
       if (Object.hasOwnProperty.call(data, key)) {
         const element = data[key];
-        if (element.length === 0) {
+        if (
+          ((key === 'num1' ||
+            key === 'num2' ||
+            key === 'num3' ||
+            key === 'num4') &&
+            element.length < 4) ||
+          ((key === 'month' || key === 'year') && element.length < 2) ||
+          (key === 'CVC' && element.length < 3) ||
+          element.length === 0
+        ) {
           const inp = document.getElementById(key);
           inp.classList.add(s.error);
           inp.focus();
@@ -95,9 +104,6 @@ export default function Payment({
         )}
       </div>
       <div className={s.cardBlock}>
-        <div className={s.card1}>
-          <div className={s.strip}></div>
-        </div>
         <div className={s.card}>
           <div className={s.bank}>
             <span>Ваш банк</span>
@@ -186,6 +192,9 @@ export default function Payment({
               </button>
             </div>
           </form>
+        </div>
+        <div className={s.card1}>
+          <div className={s.strip}></div>
         </div>
       </div>
     </div>
