@@ -103,7 +103,7 @@
     padding: 30px;
 }
 
-.footer div:nth-child(1) {
+.contactsBlock {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -117,16 +117,19 @@
     gap: 20px;
 }
 
+
 .copy {
     text-align: center;
     font-size: 0.8em;
 }
 
 .footer span {
-    display: inline-block;
-    margin-bottom: 15px;
     font-weight: 600;
     font-size: 1.2em;
+}
+
+.footer ul {
+    margin-top: 15px;
 }
 
 .footer li {

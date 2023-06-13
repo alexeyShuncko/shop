@@ -22,22 +22,27 @@ export const Footer = ({ category, setCategory }) => {
 
   return (
     <div className={s.footer}>
-      <div>
-        <ul onClick={clickCategory}>
+      <div className={s.contactsBlock}>
+        <div>
           <span>Категории:</span>
-          <li>{`men's clothing`}</li>
-          <li>jewelery</li>
-          <li>electronics</li>
-          <li>{`women's clothing`}</li>
-        </ul>
-        <div className={s.contacts}>
-          <ul>
-            <span>Контакты:</span>
-            <li>+111-22-333-44-55</li>
-            <li>+111-22-333-44-55</li>
-            <li>shop@yandex.ru</li>
-            <li>г.Минск пр.Независимости 58</li>
+          <ul onClick={clickCategory}>
+            <li>{`men's clothing`}</li>
+            <li>jewelery</li>
+            <li>electronics</li>
+            <li>{`women's clothing`}</li>
           </ul>
+        </div>
+        <div className={s.contacts}>
+          <div>
+            <span>Контакты:</span>
+            <ul>
+              <li>+111-22-333-44-55</li>
+              <li>+111-22-333-44-55</li>
+              <li>shop@yandex.ru</li>
+              <li>г.Минск пр.Независимости 58</li>
+            </ul>
+          </div>
+
           <YMaps
             preload
             query={{
