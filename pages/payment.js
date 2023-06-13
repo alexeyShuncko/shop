@@ -115,7 +115,7 @@ export default function Payment({
           <form className={s.formCard}>
             <div className={s.num}>
               <input
-                maxLength={4}
+                type={'number'}
                 autoFocus
                 autoComplete="off"
                 id="num1"
@@ -123,21 +123,21 @@ export default function Payment({
                 value={data.num1}
               />
               <input
-                maxLength={4}
+                type={'number'}
                 autoComplete="off"
                 id="num2"
                 onChange={jump}
                 value={data.num2}
               />
               <input
-                maxLength={4}
+                type={'number'}
                 id="num3"
                 autoComplete="off"
                 onChange={jump}
                 value={data.num3}
               />
               <input
-                maxLength={4}
+                type={'number'}
                 id="num4"
                 autoComplete="off"
                 onChange={jump}
@@ -148,7 +148,7 @@ export default function Payment({
               <span>Срок действия</span>
               <div>
                 <input
-                  maxLength={2}
+                  type={'number'}
                   autoComplete="off"
                   id="month"
                   onChange={jump}
@@ -156,7 +156,7 @@ export default function Payment({
                 />
                 <span>/</span>
                 <input
-                  maxLength={2}
+                  type={'number'}
                   id="year"
                   autoComplete="off"
                   onChange={jump}
@@ -174,7 +174,12 @@ export default function Payment({
               <span>Имя владельца</span>
             </div>
             <div className={s.cvc}>
-              <input maxLength={3} id="CVC" onChange={jump} value={data.CVC} />
+              <input
+                type={'number'}
+                id="CVC"
+                onChange={jump}
+                value={data.CVC}
+              />
               <span>CVC</span>
             </div>
             <div className={s.btnBlock}>
