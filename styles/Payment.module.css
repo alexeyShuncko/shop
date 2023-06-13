@@ -2,12 +2,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+
+.textTotal {
+    font-size: 1.3em;
 }
 
 .cardBlock {
     position: relative;
-    min-height: 150px;
+    min-height: 33vh;
 }
 
 .card {
@@ -26,6 +32,8 @@
     gap: 5px;
 }
 
+
+
 .bank {
     display: flex;
     align-items: center;
@@ -39,6 +47,7 @@
 
 
 .formCard {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -104,6 +113,17 @@
     font-size: 1.1em;
 }
 
+.btnBlock {
+    position: absolute;
+    left: 35%;
+    top: 110%;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
 .card1 {
     position: absolute;
     left: -70px;
@@ -124,6 +144,9 @@
 }
 
 .cvc {
+    position: absolute;
+    top: -30%;
+    left: 65%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,4 +163,10 @@
     height: 25px;
     font-size: 1.1em;
     text-align: center;
+}
+
+
+input.error {
+    border: 2px solid var(--remove);
+
 }
