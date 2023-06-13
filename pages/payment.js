@@ -78,6 +78,9 @@ export default function Payment({
     if (e.target.value.length === 2 && e.target.id === 'year') {
       e.target.parentNode.parentNode.nextSibling.firstChild.focus();
     }
+    if (e.target.value.length === 3 && e.target.id === 'CVC') {
+      e.target.parentNode.nextSibling.lastChild.focus();
+    }
   };
 
   return (
